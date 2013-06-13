@@ -18,6 +18,7 @@
 		FAE9B0E017698F92007BC364 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE9B0DF17698F92007BC364 /* Default-568h@2x.png */; };
 		FAE9B0E317698F92007BC364 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE9B0E117698F92007BC364 /* MainStoryboard.storyboard */; };
 		FAE9B0E617698F92007BC364 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0E517698F92007BC364 /* ViewController.m */; };
+		FAE9B0EE17698FF4007BC364 /* HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0ED17698FF4007BC364 /* HTTP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		FAE9B0E217698F92007BC364 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FAE9B0E417698F92007BC364 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FAE9B0E517698F92007BC364 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FAE9B0EC17698FF4007BC364 /* HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP.h; sourceTree = "<group>"; };
+		FAE9B0ED17698FF4007BC364 /* HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		FAE9B0CF17698F92007BC364 /* Huixiang */ = {
 			isa = PBXGroup;
 			children = (
+				FAE9B0EC17698FF4007BC364 /* HTTP.h */,
+				FAE9B0ED17698FF4007BC364 /* HTTP.m */,
 				FAE9B0D817698F92007BC364 /* AppDelegate.h */,
 				FAE9B0D917698F92007BC364 /* AppDelegate.m */,
 				FAE9B0E117698F92007BC364 /* MainStoryboard.storyboard */,
@@ -176,6 +181,7 @@
 				FAE9B0D617698F92007BC364 /* main.m in Sources */,
 				FAE9B0DA17698F92007BC364 /* AppDelegate.m in Sources */,
 				FAE9B0E617698F92007BC364 /* ViewController.m in Sources */,
+				FAE9B0EE17698FF4007BC364 /* HTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
