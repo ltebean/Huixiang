@@ -49,6 +49,7 @@
 		FA7F42EF178413F900AD26CB /* fav.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42ED178413F900AD26CB /* fav.png */; };
 		FA7F42F0178413F900AD26CB /* fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42EE178413F900AD26CB /* fav@2x.png */; };
 		FA7F42F3178414D500AD26CB /* WeiboHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42F2178414D400AD26CB /* WeiboHTTP.m */; };
+		FA7F42F517841D5100AD26CB /* back-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42F417841D5100AD26CB /* back-btn.png */; };
 		FAC965C81782AC10009CB3B1 /* default-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC965C61782AC10009CB3B1 /* default-avatar.png */; };
 		FAC965C91782AC10009CB3B1 /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC965C71782AC10009CB3B1 /* nav.png */; };
 		FAE9B0CA17698F92007BC364 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE9B0C917698F92007BC364 /* UIKit.framework */; };
@@ -121,6 +122,7 @@
 		FA7F42EE178413F900AD26CB /* fav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav@2x.png"; sourceTree = "<group>"; };
 		FA7F42F1178414D300AD26CB /* WeiboHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboHTTP.h; sourceTree = "<group>"; };
 		FA7F42F2178414D400AD26CB /* WeiboHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboHTTP.m; sourceTree = "<group>"; };
+		FA7F42F417841D5100AD26CB /* back-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-btn.png"; sourceTree = "<group>"; };
 		FAC965C61782AC10009CB3B1 /* default-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-avatar.png"; sourceTree = "<group>"; };
 		FAC965C71782AC10009CB3B1 /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
 		FAE9B0C617698F92007BC364 /* Huixiang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huixiang.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +240,7 @@
 		FAC965C51782AC00009CB3B1 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				FA7F42F417841D5100AD26CB /* back-btn.png */,
 				FA7F429B1783C46D00AD26CB /* tab.png */,
 				FA7F429C1783C46D00AD26CB /* tab@2x.png */,
 				FA7F428B1783BB5C00AD26CB /* main.png */,
@@ -421,6 +424,7 @@
 				FA7F42E81784112B00AD26CB /* weibo.png in Resources */,
 				FA7F42EF178413F900AD26CB /* fav.png in Resources */,
 				FA7F42F0178413F900AD26CB /* fav@2x.png in Resources */,
+				FA7F42F517841D5100AD26CB /* back-btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

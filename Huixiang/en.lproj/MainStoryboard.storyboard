@@ -142,7 +142,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G8d-rm-gLW">
-                                <rect key="frame" x="4" y="5" width="36" height="36"/>
+                                <rect key="frame" x="10" y="9" width="28" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="back-btn.png">
@@ -322,7 +322,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back-btn.png" width="16" height="16"/>
+        <image name="back-btn.png" width="64" height="64"/>
         <image name="favorites.png" width="26" height="26"/>
         <image name="main.png" width="26" height="26"/>
         <image name="nav.png" width="320" height="44"/>
@@ -343,9 +343,6 @@
         <class className="SettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="bind:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="changeAccount:"/>
                 <relationship kind="outlet" name="sinaWeiboBindingSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="weiboNameLabel" candidateClass="UILabel"/>
             </relationships>

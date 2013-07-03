@@ -70,7 +70,7 @@
         [self getUserInfoWithToken:access_token uid:uid];
     }
     
-    [SVProgressHUD showSuccessWithStatus:@"成功"];
+    [SVProgressHUD dismiss];
 
 }
 
@@ -84,7 +84,7 @@
         user[@"client_hash"]=data[@"msg"][@"client_hash"];
         user[@"weibo_id"]=data[@"msg"][@"weibo_id"];
         [Settings saveUser:user];
-        //[self dismissModalViewControllerAnimated:YES]
+        [self dismissModalViewControllerAnimated:YES];
     }];
 
 }
