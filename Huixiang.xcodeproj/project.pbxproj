@@ -7,6 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA5133511782B1B00072FC1A /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5133501782B1B00072FC1A /* iCarousel.m */; };
+		FA5133531782B2150072FC1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5133521782B2150072FC1A /* QuartzCore.framework */; };
+		FA5133551782B3650072FC1A /* PieceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5133541782B3650072FC1A /* PieceView.xib */; };
+		FA5133581782B3930072FC1A /* PieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5133571782B3930072FC1A /* PieceView.m */; };
+		FA6190E21782D0B7007C17ED /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6190E11782D0B7007C17ED /* heart.png */; };
+		FA7F42811783BAB100AD26CB /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F427F1783BAB100AD26CB /* favorites.png */; };
+		FA7F42821783BAB100AD26CB /* favorites@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42801783BAB100AD26CB /* favorites@2x.png */; };
+		FA7F42851783BAC200AD26CB /* heartAction.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42831783BAC200AD26CB /* heartAction.png */; };
+		FA7F42861783BAC200AD26CB /* heartAction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42841783BAC200AD26CB /* heartAction@2x.png */; };
+		FA7F42891783BAD100AD26CB /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42871783BAD100AD26CB /* settings.png */; };
+		FA7F428A1783BAD100AD26CB /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42881783BAD100AD26CB /* settings@2x.png */; };
+		FA7F428D1783BB5C00AD26CB /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F428B1783BB5C00AD26CB /* main.png */; };
+		FA7F428E1783BB5C00AD26CB /* main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F428C1783BB5C00AD26CB /* main@2x.png */; };
+		FA7F42921783BC6D00AD26CB /* SinaWeiboAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42911783BC6D00AD26CB /* SinaWeiboAuthViewController.m */; };
+		FA7F42971783BC7F00AD26CB /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42941783BC7F00AD26CB /* SVProgressHUD.bundle */; };
+		FA7F42981783BC7F00AD26CB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42961783BC7F00AD26CB /* SVProgressHUD.m */; };
+		FA7F429D1783C46D00AD26CB /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F429B1783C46D00AD26CB /* tab.png */; };
+		FA7F429E1783C46D00AD26CB /* tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F429C1783C46D00AD26CB /* tab@2x.png */; };
+		FA7F42A11783C99900AD26CB /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42A01783C99900AD26CB /* CollectionViewController.m */; };
+		FA7F42A61783CB6A00AD26CB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7F42A51783CB6A00AD26CB /* MessageUI.framework */; };
+		FA7F42AA1783DBA700AD26CB /* HMSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42A91783DBA700AD26CB /* HMSideMenu.m */; };
+		FA7F42C51783DFFF00AD26CB /* browser.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42BD1783DFFF00AD26CB /* browser.png */; };
+		FA7F42C61783DFFF00AD26CB /* browser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42BE1783DFFF00AD26CB /* browser@2x.png */; };
+		FA7F42C71783DFFF00AD26CB /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42BF1783DFFF00AD26CB /* email.png */; };
+		FA7F42C81783DFFF00AD26CB /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42C01783DFFF00AD26CB /* email@2x.png */; };
+		FA7F42C91783DFFF00AD26CB /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42C11783DFFF00AD26CB /* facebook.png */; };
+		FA7F42CA1783DFFF00AD26CB /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42C21783DFFF00AD26CB /* facebook@2x.png */; };
+		FA7F42CB1783DFFF00AD26CB /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42C31783DFFF00AD26CB /* twitter.png */; };
+		FA7F42CC1783DFFF00AD26CB /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42C41783DFFF00AD26CB /* twitter@2x.png */; };
+		FA7F42CF1783EABF00AD26CB /* PieceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42CE1783EABF00AD26CB /* PieceCell.m */; };
+		FA7F42D81783EDFE00AD26CB /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42D21783EDFD00AD26CB /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA7F42D91783EDFE00AD26CB /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42D31783EDFD00AD26CB /* grayArrow.png */; };
+		FA7F42DA1783EDFE00AD26CB /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42D41783EDFD00AD26CB /* grayArrow@2x.png */; };
+		FA7F42DB1783EDFE00AD26CB /* LoadingMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42D71783EDFE00AD26CB /* LoadingMoreFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA7F42DE1783EE0D00AD26CB /* YCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42DD1783EE0D00AD26CB /* YCTableViewController.m */; };
+		FA7F42E1178406A100AD26CB /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42E0178406A000AD26CB /* Settings.m */; };
+		FA7F42E417840E0100AD26CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42E317840E0000AD26CB /* SettingsViewController.m */; };
+		FA7F42E71784112B00AD26CB /* weibo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42E51784112B00AD26CB /* weibo@2x.png */; };
+		FA7F42E81784112B00AD26CB /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42E61784112B00AD26CB /* weibo.png */; };
+		FA7F42EF178413F900AD26CB /* fav.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42ED178413F900AD26CB /* fav.png */; };
+		FA7F42F0178413F900AD26CB /* fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42EE178413F900AD26CB /* fav@2x.png */; };
+		FA7F42F3178414D500AD26CB /* WeiboHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42F2178414D400AD26CB /* WeiboHTTP.m */; };
+		FAC965C81782AC10009CB3B1 /* default-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC965C61782AC10009CB3B1 /* default-avatar.png */; };
+		FAC965C91782AC10009CB3B1 /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC965C71782AC10009CB3B1 /* nav.png */; };
 		FAE9B0CA17698F92007BC364 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE9B0C917698F92007BC364 /* UIKit.framework */; };
 		FAE9B0CC17698F92007BC364 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE9B0CB17698F92007BC364 /* Foundation.framework */; };
 		FAE9B0CE17698F92007BC364 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE9B0CD17698F92007BC364 /* CoreGraphics.framework */; };
@@ -22,6 +66,63 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA51334F1782B1B00072FC1A /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		FA5133501782B1B00072FC1A /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		FA5133521782B2150072FC1A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FA5133541782B3650072FC1A /* PieceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieceView.xib; sourceTree = "<group>"; };
+		FA5133561782B3930072FC1A /* PieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceView.h; sourceTree = "<group>"; };
+		FA5133571782B3930072FC1A /* PieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceView.m; sourceTree = "<group>"; };
+		FA6190E11782D0B7007C17ED /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		FA7F427F1783BAB100AD26CB /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
+		FA7F42801783BAB100AD26CB /* favorites@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites@2x.png"; sourceTree = "<group>"; };
+		FA7F42831783BAC200AD26CB /* heartAction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartAction.png; sourceTree = "<group>"; };
+		FA7F42841783BAC200AD26CB /* heartAction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heartAction@2x.png"; sourceTree = "<group>"; };
+		FA7F42871783BAD100AD26CB /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		FA7F42881783BAD100AD26CB /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		FA7F428B1783BB5C00AD26CB /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
+		FA7F428C1783BB5C00AD26CB /* main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main@2x.png"; sourceTree = "<group>"; };
+		FA7F42901783BC6D00AD26CB /* SinaWeiboAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthViewController.h; sourceTree = "<group>"; };
+		FA7F42911783BC6D00AD26CB /* SinaWeiboAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboAuthViewController.m; sourceTree = "<group>"; };
+		FA7F42941783BC7F00AD26CB /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		FA7F42951783BC7F00AD26CB /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		FA7F42961783BC7F00AD26CB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		FA7F429B1783C46D00AD26CB /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab.png; sourceTree = "<group>"; };
+		FA7F429C1783C46D00AD26CB /* tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab@2x.png"; sourceTree = "<group>"; };
+		FA7F429F1783C99900AD26CB /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		FA7F42A01783C99900AD26CB /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		FA7F42A51783CB6A00AD26CB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		FA7F42A81783DBA700AD26CB /* HMSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSideMenu.h; sourceTree = "<group>"; };
+		FA7F42A91783DBA700AD26CB /* HMSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSideMenu.m; sourceTree = "<group>"; };
+		FA7F42BD1783DFFF00AD26CB /* browser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = browser.png; sourceTree = "<group>"; };
+		FA7F42BE1783DFFF00AD26CB /* browser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "browser@2x.png"; sourceTree = "<group>"; };
+		FA7F42BF1783DFFF00AD26CB /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		FA7F42C01783DFFF00AD26CB /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
+		FA7F42C11783DFFF00AD26CB /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		FA7F42C21783DFFF00AD26CB /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
+		FA7F42C31783DFFF00AD26CB /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		FA7F42C41783DFFF00AD26CB /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
+		FA7F42CD1783EABF00AD26CB /* PieceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceCell.h; sourceTree = "<group>"; };
+		FA7F42CE1783EABF00AD26CB /* PieceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceCell.m; sourceTree = "<group>"; };
+		FA7F42D11783EDFD00AD26CB /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		FA7F42D21783EDFD00AD26CB /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		FA7F42D31783EDFD00AD26CB /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		FA7F42D41783EDFD00AD26CB /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		FA7F42D61783EDFE00AD26CB /* LoadingMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingMoreFooterView.h; sourceTree = "<group>"; };
+		FA7F42D71783EDFE00AD26CB /* LoadingMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingMoreFooterView.m; sourceTree = "<group>"; };
+		FA7F42DC1783EE0C00AD26CB /* YCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCTableViewController.h; sourceTree = "<group>"; };
+		FA7F42DD1783EE0D00AD26CB /* YCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCTableViewController.m; sourceTree = "<group>"; };
+		FA7F42DF178406A000AD26CB /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		FA7F42E0178406A000AD26CB /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		FA7F42E217840DFF00AD26CB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FA7F42E317840E0000AD26CB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		FA7F42E51784112B00AD26CB /* weibo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo@2x.png"; sourceTree = "<group>"; };
+		FA7F42E61784112B00AD26CB /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo.png; sourceTree = "<group>"; };
+		FA7F42ED178413F900AD26CB /* fav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav.png; sourceTree = "<group>"; };
+		FA7F42EE178413F900AD26CB /* fav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fav@2x.png"; sourceTree = "<group>"; };
+		FA7F42F1178414D300AD26CB /* WeiboHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboHTTP.h; sourceTree = "<group>"; };
+		FA7F42F2178414D400AD26CB /* WeiboHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboHTTP.m; sourceTree = "<group>"; };
+		FAC965C61782AC10009CB3B1 /* default-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-avatar.png"; sourceTree = "<group>"; };
+		FAC965C71782AC10009CB3B1 /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
 		FAE9B0C617698F92007BC364 /* Huixiang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Huixiang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE9B0C917698F92007BC364 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAE9B0CB17698F92007BC364 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,6 +148,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7F42A61783CB6A00AD26CB /* MessageUI.framework in Frameworks */,
+				FA5133531782B2150072FC1A /* QuartzCore.framework in Frameworks */,
 				FAE9B0CA17698F92007BC364 /* UIKit.framework in Frameworks */,
 				FAE9B0CC17698F92007BC364 /* Foundation.framework in Frameworks */,
 				FAE9B0CE17698F92007BC364 /* CoreGraphics.framework in Frameworks */,
@@ -56,9 +159,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA51334E1782B1B00072FC1A /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				FA51334F1782B1B00072FC1A /* iCarousel.h */,
+				FA5133501782B1B00072FC1A /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		FA7F428F1783BC6000AD26CB /* sina */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F42901783BC6D00AD26CB /* SinaWeiboAuthViewController.h */,
+				FA7F42911783BC6D00AD26CB /* SinaWeiboAuthViewController.m */,
+			);
+			name = sina;
+			sourceTree = "<group>";
+		};
+		FA7F42931783BC7F00AD26CB /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F42941783BC7F00AD26CB /* SVProgressHUD.bundle */,
+				FA7F42951783BC7F00AD26CB /* SVProgressHUD.h */,
+				FA7F42961783BC7F00AD26CB /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		FA7F42A71783DBA700AD26CB /* HMSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F42A81783DBA700AD26CB /* HMSideMenu.h */,
+				FA7F42A91783DBA700AD26CB /* HMSideMenu.m */,
+			);
+			path = HMSideMenu;
+			sourceTree = "<group>";
+		};
+		FA7F42BC1783DFFF00AD26CB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F42ED178413F900AD26CB /* fav.png */,
+				FA7F42EE178413F900AD26CB /* fav@2x.png */,
+				FA7F42E51784112B00AD26CB /* weibo@2x.png */,
+				FA7F42E61784112B00AD26CB /* weibo.png */,
+				FA7F42BD1783DFFF00AD26CB /* browser.png */,
+				FA7F42BE1783DFFF00AD26CB /* browser@2x.png */,
+				FA7F42BF1783DFFF00AD26CB /* email.png */,
+				FA7F42C01783DFFF00AD26CB /* email@2x.png */,
+				FA7F42C11783DFFF00AD26CB /* facebook.png */,
+				FA7F42C21783DFFF00AD26CB /* facebook@2x.png */,
+				FA7F42C31783DFFF00AD26CB /* twitter.png */,
+				FA7F42C41783DFFF00AD26CB /* twitter@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FA7F42D01783EDFD00AD26CB /* EGORefreshTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F42D11783EDFD00AD26CB /* EGORefreshTableHeaderView.h */,
+				FA7F42D21783EDFD00AD26CB /* EGORefreshTableHeaderView.m */,
+				FA7F42D31783EDFD00AD26CB /* grayArrow.png */,
+				FA7F42D41783EDFD00AD26CB /* grayArrow@2x.png */,
+			);
+			path = EGORefreshTableHeaderView;
+			sourceTree = "<group>";
+		};
+		FA7F42D51783EDFD00AD26CB /* LoadingMoreFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F42D61783EDFE00AD26CB /* LoadingMoreFooterView.h */,
+				FA7F42D71783EDFE00AD26CB /* LoadingMoreFooterView.m */,
+			);
+			path = LoadingMoreFooterView;
+			sourceTree = "<group>";
+		};
+		FAC965C51782AC00009CB3B1 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				FA7F429B1783C46D00AD26CB /* tab.png */,
+				FA7F429C1783C46D00AD26CB /* tab@2x.png */,
+				FA7F428B1783BB5C00AD26CB /* main.png */,
+				FA7F428C1783BB5C00AD26CB /* main@2x.png */,
+				FA7F42871783BAD100AD26CB /* settings.png */,
+				FA7F42881783BAD100AD26CB /* settings@2x.png */,
+				FA7F42831783BAC200AD26CB /* heartAction.png */,
+				FA7F42841783BAC200AD26CB /* heartAction@2x.png */,
+				FA7F427F1783BAB100AD26CB /* favorites.png */,
+				FA7F42801783BAB100AD26CB /* favorites@2x.png */,
+				FA6190E11782D0B7007C17ED /* heart.png */,
+				FAC965C61782AC10009CB3B1 /* default-avatar.png */,
+				FAC965C71782AC10009CB3B1 /* nav.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
 		FAE9B0BD17698F92007BC364 = {
 			isa = PBXGroup;
 			children = (
+				FA7F42A51783CB6A00AD26CB /* MessageUI.framework */,
+				FA5133521782B2150072FC1A /* QuartzCore.framework */,
 				FAE9B0CF17698F92007BC364 /* Huixiang */,
 				FAE9B0C817698F92007BC364 /* Frameworks */,
 				FAE9B0C717698F92007BC364 /* Products */,
@@ -86,13 +287,34 @@
 		FAE9B0CF17698F92007BC364 /* Huixiang */ = {
 			isa = PBXGroup;
 			children = (
+				FA7F42DC1783EE0C00AD26CB /* YCTableViewController.h */,
+				FA7F42DD1783EE0D00AD26CB /* YCTableViewController.m */,
+				FA7F42D01783EDFD00AD26CB /* EGORefreshTableHeaderView */,
+				FA7F42D51783EDFD00AD26CB /* LoadingMoreFooterView */,
+				FA7F42A71783DBA700AD26CB /* HMSideMenu */,
+				FA7F42931783BC7F00AD26CB /* SVProgressHUD */,
+				FA7F428F1783BC6000AD26CB /* sina */,
 				FAE9B0EC17698FF4007BC364 /* HTTP.h */,
 				FAE9B0ED17698FF4007BC364 /* HTTP.m */,
+				FA7F42F1178414D300AD26CB /* WeiboHTTP.h */,
+				FA7F42F2178414D400AD26CB /* WeiboHTTP.m */,
 				FAE9B0D817698F92007BC364 /* AppDelegate.h */,
 				FAE9B0D917698F92007BC364 /* AppDelegate.m */,
 				FAE9B0E117698F92007BC364 /* MainStoryboard.storyboard */,
 				FAE9B0E417698F92007BC364 /* ViewController.h */,
 				FAE9B0E517698F92007BC364 /* ViewController.m */,
+				FA7F429F1783C99900AD26CB /* CollectionViewController.h */,
+				FA7F42A01783C99900AD26CB /* CollectionViewController.m */,
+				FA7F42CD1783EABF00AD26CB /* PieceCell.h */,
+				FA7F42CE1783EABF00AD26CB /* PieceCell.m */,
+				FA5133561782B3930072FC1A /* PieceView.h */,
+				FA5133571782B3930072FC1A /* PieceView.m */,
+				FA5133541782B3650072FC1A /* PieceView.xib */,
+				FA7F42DF178406A000AD26CB /* Settings.h */,
+				FA7F42E0178406A000AD26CB /* Settings.m */,
+				FA7F42E217840DFF00AD26CB /* SettingsViewController.h */,
+				FA7F42E317840E0000AD26CB /* SettingsViewController.m */,
+				FA51334E1782B1B00072FC1A /* iCarousel */,
 				FAE9B0D017698F92007BC364 /* Supporting Files */,
 			);
 			path = Huixiang;
@@ -101,6 +323,8 @@
 		FAE9B0D017698F92007BC364 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA7F42BC1783DFFF00AD26CB /* Images */,
+				FAC965C51782AC00009CB3B1 /* img */,
 				FAE9B0D117698F92007BC364 /* Huixiang-Info.plist */,
 				FAE9B0D217698F92007BC364 /* InfoPlist.strings */,
 				FAE9B0D517698F92007BC364 /* main.m */,
@@ -168,6 +392,35 @@
 				FAE9B0DE17698F92007BC364 /* Default@2x.png in Resources */,
 				FAE9B0E017698F92007BC364 /* Default-568h@2x.png in Resources */,
 				FAE9B0E317698F92007BC364 /* MainStoryboard.storyboard in Resources */,
+				FAC965C81782AC10009CB3B1 /* default-avatar.png in Resources */,
+				FAC965C91782AC10009CB3B1 /* nav.png in Resources */,
+				FA5133551782B3650072FC1A /* PieceView.xib in Resources */,
+				FA6190E21782D0B7007C17ED /* heart.png in Resources */,
+				FA7F42811783BAB100AD26CB /* favorites.png in Resources */,
+				FA7F42821783BAB100AD26CB /* favorites@2x.png in Resources */,
+				FA7F42851783BAC200AD26CB /* heartAction.png in Resources */,
+				FA7F42861783BAC200AD26CB /* heartAction@2x.png in Resources */,
+				FA7F42891783BAD100AD26CB /* settings.png in Resources */,
+				FA7F428A1783BAD100AD26CB /* settings@2x.png in Resources */,
+				FA7F428D1783BB5C00AD26CB /* main.png in Resources */,
+				FA7F428E1783BB5C00AD26CB /* main@2x.png in Resources */,
+				FA7F42971783BC7F00AD26CB /* SVProgressHUD.bundle in Resources */,
+				FA7F429D1783C46D00AD26CB /* tab.png in Resources */,
+				FA7F429E1783C46D00AD26CB /* tab@2x.png in Resources */,
+				FA7F42C51783DFFF00AD26CB /* browser.png in Resources */,
+				FA7F42C61783DFFF00AD26CB /* browser@2x.png in Resources */,
+				FA7F42C71783DFFF00AD26CB /* email.png in Resources */,
+				FA7F42C81783DFFF00AD26CB /* email@2x.png in Resources */,
+				FA7F42C91783DFFF00AD26CB /* facebook.png in Resources */,
+				FA7F42CA1783DFFF00AD26CB /* facebook@2x.png in Resources */,
+				FA7F42CB1783DFFF00AD26CB /* twitter.png in Resources */,
+				FA7F42CC1783DFFF00AD26CB /* twitter@2x.png in Resources */,
+				FA7F42D91783EDFE00AD26CB /* grayArrow.png in Resources */,
+				FA7F42DA1783EDFE00AD26CB /* grayArrow@2x.png in Resources */,
+				FA7F42E71784112B00AD26CB /* weibo@2x.png in Resources */,
+				FA7F42E81784112B00AD26CB /* weibo.png in Resources */,
+				FA7F42EF178413F900AD26CB /* fav.png in Resources */,
+				FA7F42F0178413F900AD26CB /* fav@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +435,19 @@
 				FAE9B0DA17698F92007BC364 /* AppDelegate.m in Sources */,
 				FAE9B0E617698F92007BC364 /* ViewController.m in Sources */,
 				FAE9B0EE17698FF4007BC364 /* HTTP.m in Sources */,
+				FA5133511782B1B00072FC1A /* iCarousel.m in Sources */,
+				FA5133581782B3930072FC1A /* PieceView.m in Sources */,
+				FA7F42921783BC6D00AD26CB /* SinaWeiboAuthViewController.m in Sources */,
+				FA7F42981783BC7F00AD26CB /* SVProgressHUD.m in Sources */,
+				FA7F42A11783C99900AD26CB /* CollectionViewController.m in Sources */,
+				FA7F42AA1783DBA700AD26CB /* HMSideMenu.m in Sources */,
+				FA7F42CF1783EABF00AD26CB /* PieceCell.m in Sources */,
+				FA7F42D81783EDFE00AD26CB /* EGORefreshTableHeaderView.m in Sources */,
+				FA7F42DB1783EDFE00AD26CB /* LoadingMoreFooterView.m in Sources */,
+				FA7F42DE1783EE0D00AD26CB /* YCTableViewController.m in Sources */,
+				FA7F42E1178406A100AD26CB /* Settings.m in Sources */,
+				FA7F42E417840E0100AD26CB /* SettingsViewController.m in Sources */,
+				FA7F42F3178414D500AD26CB /* WeiboHTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +570,7 @@
 				FAE9B0EB17698F92007BC364 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

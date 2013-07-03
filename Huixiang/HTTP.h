@@ -12,9 +12,9 @@
 
 @interface HTTP : NSObject
 
-+(void)sendRequestToPath:(NSString*)url method:(NSString*)method params:(NSDictionary*)params  completionHandler:(void (^)(id)) completionHandler ;
++(void)sendRequestToPath:(NSString*)url method:(NSString*)method params:(NSDictionary*)params cookies:(NSDictionary*)cookies  completionHandler:(void (^)(id)) completionHandler ;
 
 
-+(void)postJsonToPath:(NSString*)url id:object  completionHandler:(void (^)(id)) completionHandler;
++(void)postJsonToPath:(NSString*)url id:object cookies:(NSDictionary*)cookies  completionHandler:(void (^)(id)) completionHandler;
 
 @end
