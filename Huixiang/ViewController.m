@@ -17,7 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
-#define ITEM_SPACING 260.0f
+#define ITEM_SPACING 280.0f
 #define INCLUDE_PLACEHOLDERS YES
 
 typedef enum

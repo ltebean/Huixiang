@@ -70,6 +70,7 @@
 		FAE9B0E317698F92007BC364 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE9B0E117698F92007BC364 /* MainStoryboard.storyboard */; };
 		FAE9B0E617698F92007BC364 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0E517698F92007BC364 /* ViewController.m */; };
 		FAE9B0EE17698FF4007BC364 /* HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0ED17698FF4007BC364 /* HTTP.m */; };
+		FAEC39B0178570D50089E61E /* InsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC39AF178570D50089E61E /* InsetsLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,8 @@
 		FAE9B0E517698F92007BC364 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FAE9B0EC17698FF4007BC364 /* HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP.h; sourceTree = "<group>"; };
 		FAE9B0ED17698FF4007BC364 /* HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP.m; sourceTree = "<group>"; };
+		FAEC39AE178570D50089E61E /* InsetsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsetsLabel.h; sourceTree = "<group>"; };
+		FAEC39AF178570D50089E61E /* InsetsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsetsLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +326,8 @@
 		FAE9B0CF17698F92007BC364 /* Huixiang */ = {
 			isa = PBXGroup;
 			children = (
+				FAEC39AE178570D50089E61E /* InsetsLabel.h */,
+				FAEC39AF178570D50089E61E /* InsetsLabel.m */,
 				FA2AA8D117854056000D63FC /* iap */,
 				FA7F42D01783EDFD00AD26CB /* EGORefreshTableHeaderView */,
 				FA7F42D51783EDFD00AD26CB /* LoadingMoreFooterView */,
@@ -486,6 +491,7 @@
 				FA7F42F3178414D500AD26CB /* WeiboHTTP.m in Sources */,
 				FA2AA8D417854075000D63FC /* IAPHelper.m in Sources */,
 				FA2AA8D7178540F8000D63FC /* HuixiangIAPHelper.m in Sources */,
+				FAEC39B0178570D50089E61E /* InsetsLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

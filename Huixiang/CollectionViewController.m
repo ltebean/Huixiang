@@ -176,12 +176,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath  *)indexPath
 {
     NSString* content=self.pieces[indexPath.row][@"content"];
-    return [self measureTextHeight:content fontSize:18 constrainedToSize:CGSizeMake(290, 500)].height+50;
+    return [self measureTextHeight:content fontSize:18 constrainedToSize:CGSizeMake(290, 500)].height+54;
 }
 
 -(CGSize)measureTextHeight:(NSString*)text fontSize:(CGFloat)fontSize constrainedToSize:(CGSize)constrainedToSize
 {
-    CGSize mTempSize = [text sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:constrainedToSize lineBreakMode:UILineBreakModeWordWrap];
+    CGSize mTempSize = [text sizeWithFont:[UIFont fontWithName:@"Hiragino Kaku Gothic ProN" size:fontSize] constrainedToSize:constrainedToSize lineBreakMode:UILineBreakModeWordWrap];
     return mTempSize;
 }
 

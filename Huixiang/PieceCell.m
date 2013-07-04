@@ -25,7 +25,7 @@
 -(void)updateUI
 {
     CGSize size=[self measureTextHeight:self.piece[@"content"] fontSize:18 constrainedToSize:CGSizeMake(290, 500)];
-    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 296, size.height+36);
+    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 296, size.height+44);
     self.label.text=self.piece[@"content"];
     
     self.label.layer.shadowColor = [UIColor grayColor].CGColor;
@@ -38,7 +38,7 @@
 
 -(CGSize)measureTextHeight:(NSString*)text fontSize:(CGFloat)fontSize constrainedToSize:(CGSize)constrainedToSize
 {
-    CGSize mTempSize = [text sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:constrainedToSize lineBreakMode:UILineBreakModeWordWrap];
+    CGSize mTempSize = [text sizeWithFont:[UIFont fontWithName:@"Hiragino Kaku Gothic ProN" size:fontSize] constrainedToSize:constrainedToSize lineBreakMode:UILineBreakModeWordWrap];
     return mTempSize;
 }
 
