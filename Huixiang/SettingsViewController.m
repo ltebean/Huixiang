@@ -82,12 +82,15 @@
         [self sendMail];
     }else if(indexPath.section==1&&indexPath.row==1){
         [self goToRating];
+    }else if(indexPath.section==2&&indexPath.row==0){
+        NSString *url = @"http://huixiang.im";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
 }
 
 -(void)goToRating
 {
-    NSString *REVIEW_URL = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=602955052&onlyLatestVersion=true&type=Purple+Software";
+    NSString *REVIEW_URL = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=669860898&onlyLatestVersion=true&type=Purple+Software";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:REVIEW_URL]];
 }
 

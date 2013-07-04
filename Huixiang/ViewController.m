@@ -30,7 +30,6 @@ alertViewType;
 
 @interface ViewController ()<iCarouselDataSource, iCarouselDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
-@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property(nonatomic,strong) NSMutableArray* pieces;
 @property (nonatomic, strong) HMSideMenu *sideMenu;
 @property int currentIndex;
@@ -118,8 +117,7 @@ alertViewType;
     self.currentIndex=0;
     self.loaded=NO;
 	// Do any additional setup after loading the view, typically from a nib.
-    self.shareButton.layer.cornerRadius = 14; // this value vary as per your desire
-    self.shareButton.clipsToBounds = YES;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
