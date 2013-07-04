@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "HuixiangIAPHelper.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -15,7 +15,7 @@
     // Override point for customization after application launch.
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
-
+    [HuixiangIAPHelper sharedInstance];
     return YES;
 }
 							

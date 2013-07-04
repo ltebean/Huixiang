@@ -76,13 +76,13 @@
 
 -(void)getUserInfoWithToken:(NSString *)access_token uid:(NSString *)uid
 {
-    [HTTP sendRequestToPath:@"/authuser" method:@"POST" params:@{@"name":@"weibo",@"access_token":access_token} cookies:nil completionHandler:^(id data) {
+    [HTTP sendRequestToPath:@"/authuser" method:@"POST" params:@{@"name":@"weibo",@"access_token":access_token} cookies:nil completionHandler:^(NSDictionary* data) {
         NSMutableDictionary* user=[NSMutableDictionary dictionary];
-        user[@"id"]=data[@"msg"][@"id"];
-        user[@"weibo_access_token"]=data[@"msg"][@"weibo_access_token"];
-        user[@"name"]=data[@"msg"][@"name"];
-        user[@"client_hash"]=data[@"msg"][@"client_hash"];
-        user[@"weibo_id"]=data[@"msg"][@"weibo_id"];
+        user[@"id"]=data[@"id"];
+        user[@"weibo_access_token"]=data[@"weibo_access_token"];
+        user[@"name"]=data[@"name"];
+        user[@"client_hash"]=data[@"client_hash"];
+        user[@"weibo_id"]=data[@"weibo_id"];
         [Settings saveUser:user];
         [self dismissModalViewControllerAnimated:YES];
     }];

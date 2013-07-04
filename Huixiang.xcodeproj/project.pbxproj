@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2AA8D017854040000D63FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AA8CF17854040000D63FC /* StoreKit.framework */; };
+		FA2AA8D417854075000D63FC /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AA8D317854075000D63FC /* IAPHelper.m */; };
+		FA2AA8D7178540F8000D63FC /* HuixiangIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AA8D6178540F8000D63FC /* HuixiangIAPHelper.m */; };
+		FA2AA8D9178551C8000D63FC /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AA8D8178551C7000D63FC /* icon.png */; };
+		FA2AA8DB178551CD000D63FC /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2AA8DA178551CD000D63FC /* icon@2x.png */; };
 		FA5133511782B1B00072FC1A /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5133501782B1B00072FC1A /* iCarousel.m */; };
 		FA5133531782B2150072FC1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5133521782B2150072FC1A /* QuartzCore.framework */; };
 		FA5133551782B3650072FC1A /* PieceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5133541782B3650072FC1A /* PieceView.xib */; };
@@ -41,7 +46,6 @@
 		FA7F42D91783EDFE00AD26CB /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42D31783EDFD00AD26CB /* grayArrow.png */; };
 		FA7F42DA1783EDFE00AD26CB /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42D41783EDFD00AD26CB /* grayArrow@2x.png */; };
 		FA7F42DB1783EDFE00AD26CB /* LoadingMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42D71783EDFE00AD26CB /* LoadingMoreFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FA7F42DE1783EE0D00AD26CB /* YCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42DD1783EE0D00AD26CB /* YCTableViewController.m */; };
 		FA7F42E1178406A100AD26CB /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42E0178406A000AD26CB /* Settings.m */; };
 		FA7F42E417840E0100AD26CB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42E317840E0000AD26CB /* SettingsViewController.m */; };
 		FA7F42E71784112B00AD26CB /* weibo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42E51784112B00AD26CB /* weibo@2x.png */; };
@@ -67,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA2AA8CF17854040000D63FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FA2AA8D217854075000D63FC /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		FA2AA8D317854075000D63FC /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		FA2AA8D5178540F8000D63FC /* HuixiangIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuixiangIAPHelper.h; sourceTree = "<group>"; };
+		FA2AA8D6178540F8000D63FC /* HuixiangIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuixiangIAPHelper.m; sourceTree = "<group>"; };
+		FA2AA8D8178551C7000D63FC /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		FA2AA8DA178551CD000D63FC /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		FA51334F1782B1B00072FC1A /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		FA5133501782B1B00072FC1A /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		FA5133521782B2150072FC1A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -110,8 +121,6 @@
 		FA7F42D41783EDFD00AD26CB /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		FA7F42D61783EDFE00AD26CB /* LoadingMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingMoreFooterView.h; sourceTree = "<group>"; };
 		FA7F42D71783EDFE00AD26CB /* LoadingMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingMoreFooterView.m; sourceTree = "<group>"; };
-		FA7F42DC1783EE0C00AD26CB /* YCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCTableViewController.h; sourceTree = "<group>"; };
-		FA7F42DD1783EE0D00AD26CB /* YCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCTableViewController.m; sourceTree = "<group>"; };
 		FA7F42DF178406A000AD26CB /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		FA7F42E0178406A000AD26CB /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		FA7F42E217840DFF00AD26CB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -150,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2AA8D017854040000D63FC /* StoreKit.framework in Frameworks */,
 				FA7F42A61783CB6A00AD26CB /* MessageUI.framework in Frameworks */,
 				FA5133531782B2150072FC1A /* QuartzCore.framework in Frameworks */,
 				FAE9B0CA17698F92007BC364 /* UIKit.framework in Frameworks */,
@@ -161,6 +171,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA2AA8D117854056000D63FC /* iap */ = {
+			isa = PBXGroup;
+			children = (
+				FA2AA8D217854075000D63FC /* IAPHelper.h */,
+				FA2AA8D317854075000D63FC /* IAPHelper.m */,
+				FA2AA8D5178540F8000D63FC /* HuixiangIAPHelper.h */,
+				FA2AA8D6178540F8000D63FC /* HuixiangIAPHelper.m */,
+			);
+			name = iap;
+			sourceTree = "<group>";
+		};
 		FA51334E1782B1B00072FC1A /* iCarousel */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +282,9 @@
 		FAE9B0BD17698F92007BC364 = {
 			isa = PBXGroup;
 			children = (
+				FA2AA8DA178551CD000D63FC /* icon@2x.png */,
+				FA2AA8D8178551C7000D63FC /* icon.png */,
+				FA2AA8CF17854040000D63FC /* StoreKit.framework */,
 				FA7F42A51783CB6A00AD26CB /* MessageUI.framework */,
 				FA5133521782B2150072FC1A /* QuartzCore.framework */,
 				FAE9B0CF17698F92007BC364 /* Huixiang */,
@@ -290,8 +314,7 @@
 		FAE9B0CF17698F92007BC364 /* Huixiang */ = {
 			isa = PBXGroup;
 			children = (
-				FA7F42DC1783EE0C00AD26CB /* YCTableViewController.h */,
-				FA7F42DD1783EE0D00AD26CB /* YCTableViewController.m */,
+				FA2AA8D117854056000D63FC /* iap */,
 				FA7F42D01783EDFD00AD26CB /* EGORefreshTableHeaderView */,
 				FA7F42D51783EDFD00AD26CB /* LoadingMoreFooterView */,
 				FA7F42A71783DBA700AD26CB /* HMSideMenu */,
@@ -425,6 +448,8 @@
 				FA7F42EF178413F900AD26CB /* fav.png in Resources */,
 				FA7F42F0178413F900AD26CB /* fav@2x.png in Resources */,
 				FA7F42F517841D5100AD26CB /* back-btn.png in Resources */,
+				FA2AA8D9178551C8000D63FC /* icon.png in Resources */,
+				FA2AA8DB178551CD000D63FC /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,10 +473,11 @@
 				FA7F42CF1783EABF00AD26CB /* PieceCell.m in Sources */,
 				FA7F42D81783EDFE00AD26CB /* EGORefreshTableHeaderView.m in Sources */,
 				FA7F42DB1783EDFE00AD26CB /* LoadingMoreFooterView.m in Sources */,
-				FA7F42DE1783EE0D00AD26CB /* YCTableViewController.m in Sources */,
 				FA7F42E1178406A100AD26CB /* Settings.m in Sources */,
 				FA7F42E417840E0100AD26CB /* SettingsViewController.m in Sources */,
 				FA7F42F3178414D500AD26CB /* WeiboHTTP.m in Sources */,
+				FA2AA8D417854075000D63FC /* IAPHelper.m in Sources */,
+				FA2AA8D7178540F8000D63FC /* HuixiangIAPHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +565,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "茴香";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -550,7 +576,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "茴香";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

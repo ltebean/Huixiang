@@ -107,13 +107,18 @@
     }
     self.page=1;
     [SVProgressHUD showWithStatus:@"加载中"];
-    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:nil cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(id data) {
-        self.pieces=[data[@"msg"] mutableCopy];
-        self.loaded=YES;
-        self.page++;
-        
-        [SVProgressHUD dismiss];
-        [self.tableView reloadData];
+    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:nil cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+        if(data && data.count>0){
+            self.pieces=[data mutableCopy];
+            self.loaded=YES;
+            self.page++;
+            
+            [SVProgressHUD dismiss];
+            [self.tableView reloadData];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"还没有收藏过任何句子"];
+        }
+   
     }];
 }
 
@@ -123,10 +128,9 @@
     if(!user){
         [self showAuthConfirm];
     }
-    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:@{@"page":[NSString stringWithFormat:@"%d",self.page]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(id data) {
-        NSArray *pieces=data[@"msg"];
-        if(pieces.count>0){
-            [self.pieces addObjectsFromArray:pieces];
+    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:@{@"page":[NSString stringWithFormat:@"%d",self.page]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+        if(data && data.count>0){
+            [self.pieces addObjectsFromArray:data];
             [self.tableView reloadData];
             self.page++;
             
@@ -172,7 +176,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath  *)indexPath
 {
     NSString* content=self.pieces[indexPath.row][@"content"];
-    return [self measureTextHeight:content fontSize:18 constrainedToSize:CGSizeMake(250, 500)].height+60;
+    return [self measureTextHeight:content fontSize:18 constrainedToSize:CGSizeMake(290, 500)].height+50;
 }
 
 -(CGSize)measureTextHeight:(NSString*)text fontSize:(CGFloat)fontSize constrainedToSize:(CGSize)constrainedToSize

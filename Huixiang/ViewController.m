@@ -190,7 +190,7 @@ alertViewType;
     [SVProgressHUD showWithStatus:@"收藏"];
     NSDictionary* piece=self.pieces[self.carousel.currentItemIndex];
     [HTTP sendRequestToPath:@"/fav" method:@"POST" params:@{@"pieceid":piece[@"id"]} cookies:@{@"cu":user[@"client_hash"]} completionHandler:^(id data) {
-        if([data[@"code"] isEqualToNumber:@200]){
+        if(data){
             [SVProgressHUD showSuccessWithStatus:@"成功"];
         }else{
             [SVProgressHUD showErrorWithStatus:@"失败"];

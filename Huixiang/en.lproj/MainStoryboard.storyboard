@@ -14,11 +14,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" id="EcR-YT-EIH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="Jqx-Wq-Ize" customClass="iCarousel">
                                         <rect key="frame" x="0.0" y="47" width="320" height="354"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="nav.png" id="cUO-Jw-PGI">
@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="-466"/>
+            <point key="canvasLocation" x="-2227" y="-30"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="crY-hy-g4A">
@@ -77,7 +77,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INm-Rh-R6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="52"/>
+            <point key="canvasLocation" x="-2857" y="565"/>
         </scene>
         <!--Collection View Controller - 收藏-->
         <scene sceneID="4na-oQ-tva">
@@ -89,7 +89,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" id="lhf-hc-mEZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="nav.png" id="tR9-K0-te5">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -107,13 +107,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" adjustsFontSizeToFit="NO" id="1ZA-TP-RFz">
-                                                            <rect key="frame" x="10" y="9" width="300" height="100"/>
+                                                        <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" adjustsFontSizeToFit="NO" id="1ZA-TP-RFz">
+                                                            <rect key="frame" x="15" y="9" width="290" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" red="0.2470588235" green="0.20392156859999999" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -139,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDn-cQ-iSM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="141"/>
+            <point key="canvasLocation" x="-2227" y="565"/>
         </scene>
         <!--Sina Weibo Auth View Controller - Item-->
         <scene sceneID="7iU-vX-la4">
@@ -185,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2R-vM-jbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168" y="149"/>
+            <point key="canvasLocation" x="-1600" y="565"/>
         </scene>
         <!--Settings View Controller - Item-->
         <scene sceneID="I04-pv-zlY">
@@ -291,6 +292,50 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="喜欢茴香" id="b6X-t4-Lkw">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dp1-jY-vmd">
+                                        <rect key="frame" x="0.0" y="302" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="qCN-uF-EEg">
+                                                    <rect key="frame" x="11" y="11" width="0.0" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rjB-sz-Ehm">
+                                                    <rect key="frame" x="218" y="6" width="73" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="捐赠">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buy:" destination="GuY-TO-zhn" eventType="touchUpInside" id="4zb-9N-AoB"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="捐赠给我们" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nkE-GC-5Ki">
+                                                    <rect key="frame" x="11" y="10" width="199" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="GuY-TO-zhn" id="HjQ-48-zmI"/>
@@ -299,13 +344,14 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="i3e-Mz-9RT"/>
                     <connections>
+                        <outlet property="productLabel" destination="nkE-GC-5Ki" id="lkr-u5-cb0"/>
                         <outlet property="weiboNameLabel" destination="gQd-Mr-Dqb" id="tAh-be-hV1"/>
                         <segue destination="8r3-rh-CAN" kind="modal" identifier="auth" modalTransitionStyle="crossDissolve" id="IUF-si-TA2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKl-y7-wc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="724"/>
+            <point key="canvasLocation" x="-2227" y="1148"/>
         </scene>
     </scenes>
     <resources>
@@ -315,55 +361,12 @@
         <image name="main.png" width="26" height="26"/>
         <image name="nav.png" width="320" height="44"/>
     </resources>
-    <classes>
-        <class className="CollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PieceCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PieceCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sinaWeiboBindingSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="weiboNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SinaWeiboAuthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SinaWeiboAuthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="share:"/>
-                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
-                <relationship kind="outlet" name="shareButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="iCarousel" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataSource"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="IUF-si-TA2"/>
+        <segue reference="CHR-eI-3Cj"/>
     </inferredMetricsTieBreakers>
 </document>

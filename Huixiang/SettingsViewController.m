@@ -10,9 +10,14 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <MessageUI/MessageUI.h>
 #import "Settings.h"
+#import "HuixiangIAPHelper.h"
+#import <StoreKit/StoreKit.h>
+#import "SVProgressHUD.h"
 
 @interface SettingsViewController ()<MFMailComposeViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *productLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weiboNameLabel;
+@property(nonatomic,strong)SKProduct * product;
 @end
 
 @implementation SettingsViewController
@@ -38,8 +43,32 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.weiboNameLabel.text=[Settings getUser][@"name"];
+    if([Settings getUser]){
+        self.weiboNameLabel.text=[Settings getUser][@"name"];
+    }
 }
+
+- (IBAction)buy:(id)sender {
+    [SVProgressHUD showWithStatus:@"加载信息"];
+    [[HuixiangIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            self.product = (SKProduct *) products[0];
+            [[HuixiangIAPHelper sharedInstance] buyProduct:self.product];
+        }
+        [SVProgressHUD dismiss];
+    }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+    
+    NSString * productIdentifier = notification.object;
+    [SVProgressHUD showSuccessWithStatus:@"捐赠成功"];
+    
+}
+
+
 
 - (IBAction)changeAccount:(id)sender {
     [self performSegueWithIdentifier:@"auth" sender:self];
@@ -105,6 +134,9 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)viewDidUnload
 {
