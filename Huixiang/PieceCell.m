@@ -7,6 +7,7 @@
 //
 
 #import "PieceCell.h"
+#import <QuartzCore/CoreAnimation.h>
 
 @interface PieceCell()
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -26,6 +27,12 @@
     CGSize size=[self measureTextHeight:self.piece[@"content"] fontSize:18 constrainedToSize:CGSizeMake(250, 350)];
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+40);
     self.label.text=self.piece[@"content"];
+    
+    self.label.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.label.layer.shadowOpacity = 0.7;
+    self.label.layer.shadowRadius = 1.0;
+    self.label.layer.shadowOffset = CGSizeMake(3, 3);
+    self.label.clipsToBounds = NO;
 
 }
 

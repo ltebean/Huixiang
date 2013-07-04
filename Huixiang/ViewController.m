@@ -14,13 +14,23 @@
 #import "Settings.h"
 #import "SVProgressHUD.h"
 #import "WeiboHTTP.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
 #define ITEM_SPACING 260.0f
 #define INCLUDE_PLACEHOLDERS YES
 
-@interface ViewController ()<iCarouselDataSource, iCarouselDelegate,PieceViewDelegate>
+typedef enum
+{
+    alertViewTypeWeiboShareConfirm = 10,
+    alertViewTypeAuthConfirm,
+    alertViewTypeShareInput
+}
+alertViewType;
+
+@interface ViewController ()<iCarouselDataSource, iCarouselDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property(nonatomic,strong) NSMutableArray* pieces;
 @property (nonatomic, strong) HMSideMenu *sideMenu;
 @property int currentIndex;
@@ -47,15 +57,23 @@
 
 -(void)initSideView
 {
+    //favItem
     UIView *favItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [favItem setMenuActionWithBlock:^{
-        [self addToFav];
+        if(![Settings getUser]){
+            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"需要登录才能收藏哦" delegate:self cancelButtonTitle:nil otherButtonTitles:@"不了",@"通过weibo登录",nil];
+            alert.tag=alertViewTypeAuthConfirm;
+            [alert show];
+        }else{
+            [self addToFav];
+        }
     }];
     UIImageView *favIcon = [[UIImageView alloc] initWithFrame:CGRectMake(6, 7, 28, 28)];
     [favIcon setImage:[UIImage imageNamed:@"fav"]];
     [favItem addSubview:favIcon];
     
     
+    //mailItem
     UIView *emailItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [emailItem setMenuActionWithBlock:^{
         NSLog(@"tapped email item");
@@ -64,19 +82,26 @@
     [emailIcon setImage:[UIImage imageNamed:@"email"]];
     [emailItem addSubview:emailIcon];
     
-    
+    //weiboItem
     UIView *weiboItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [weiboItem setMenuActionWithBlock:^{
-        [self shareToWeibo];
+        if(![Settings getUser]){
+            [self performSegueWithIdentifier:@"auth" sender:nil];
+            return;
+        }else{
+            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"转发到微博" delegate:self cancelButtonTitle:nil otherButtonTitles:@"No",@"Yes",nil];
+            alert.tag=alertViewTypeWeiboShareConfirm;
+            [alert show];
+        }
     }];
     UIImageView *weiboIcon = [[UIImageView alloc] initWithFrame:CGRectMake(1, 1, 38, 38)];
     
     [weiboIcon setImage:[UIImage imageNamed:@"weibo"]];
     [weiboItem addSubview:weiboIcon];
     
-    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[favItem,weiboItem, emailItem]];
+    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[favItem,weiboItem,]];
     self.sideMenu.menuPosition=HMSideMenuPositionTop;
-    [self.sideMenu setItemSpacing:15.0f];
+    [self.sideMenu setItemSpacing:20.0f];
     [self.carousel addSubview:self.sideMenu];
 
 }
@@ -93,6 +118,8 @@
     self.currentIndex=0;
     self.loaded=NO;
 	// Do any additional setup after loading the view, typically from a nib.
+    self.shareButton.layer.cornerRadius = 14; // this value vary as per your desire
+    self.shareButton.clipsToBounds = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -108,11 +135,47 @@
 {
     [SVProgressHUD showWithStatus:@"加载中"];
 
-    [HTTP sendRequestToPath:@"pieces" method:@"GET" params:nil cookies:nil completionHandler:^(id data) {
+    [HTTP sendRequestToPath:@"/pieces" method:@"GET" params:nil cookies:nil completionHandler:^(id data) {
         self.pieces=data;
         self.loaded=YES;
         [SVProgressHUD dismiss];
         [self.carousel reloadData];
+    }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag==alertViewTypeWeiboShareConfirm){
+        if(buttonIndex==1){
+            [self shareToWeibo];
+        }
+    }else if(alertView.tag==alertViewTypeAuthConfirm){
+        if(buttonIndex==1){
+            [self performSegueWithIdentifier:@"auth" sender:nil];
+        }
+    }else if(alertView.tag==alertViewTypeShareInput){
+        if(buttonIndex==1){
+            UITextField *commentField = [alertView textFieldAtIndex:0];
+            if(commentField.text.length==0){
+                [self showInput];
+            }else{
+                [self sharePiece:commentField.text];
+            }
+        }
+    }
+}
+
+-(void)sharePiece:(NSString*) content
+{
+    NSDictionary* user=[Settings getUser];
+    [SVProgressHUD showWithStatus:@"发送"];
+    [HTTP sendRequestToPath:@"/add" method:@"POST" params:@{@"content":content,@"share":@""} cookies:@{@"cu":user[@"client_hash"]} completionHandler:^(id data) {
+        if(data){
+            [SVProgressHUD showSuccessWithStatus:@"成功"];
+
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"失败"];
+        }
     }];
 }
 
@@ -151,12 +214,23 @@
         }];
 }
 
--(void)didSelectPiece:(NSDictionary*)peice
-{
-    if (!self.sideMenu.isOpen){
-        [self.sideMenu open];
+- (IBAction)share:(id)sender {
+    if(![Settings getUser]){
+        [self performSegueWithIdentifier:@"auth" sender:nil];
+        return;
     }
+    [self showInput];
 }
+
+-(void)showInput
+{
+    UIAlertView* alertView=[[UIAlertView alloc]initWithTitle:@"记一句:" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"发送",nil];
+    alertView.alertViewStyle=UIAlertViewStylePlainTextInput;
+    alertView.tag=alertViewTypeShareInput;
+    [alertView show];
+
+}
+
 
 #pragma mark -
 #pragma mark iCarousel methods
@@ -182,7 +256,6 @@
                                                           owner:self
                                                         options:nil];
         view=[nibViews lastObject];
-        ((PieceView*)view).delegate=self;
         
     }
     ((PieceView*)view).piece=self.pieces[index];
@@ -194,6 +267,13 @@
 {
     if(self.sideMenu.isOpen){
         [self.sideMenu close];
+    }
+}
+
+-(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    if (!self.sideMenu.isOpen){
+        [self.sideMenu open];
     }
 }
 

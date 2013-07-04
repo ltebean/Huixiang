@@ -8,15 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@protocol PieceViewDelegate <NSObject>
--(void)didSelectPiece:(NSDictionary*)peice;
-@end
-
-
 @interface PieceView : UIView
-
 @property(nonatomic,strong) NSDictionary* piece;
-@property(nonatomic,weak) id<PieceViewDelegate> delegate;
-
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define DOMAIN_URL @"http://huixiang.im/ajax/"
+#define DOMAIN_URL @"http://huixiang.im/ajax"
 
 @interface HTTP : NSObject
 

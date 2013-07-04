@@ -13,24 +13,19 @@
 @end
 @implementation PieceView
 
--(void)choose
-{
-    [self.delegate didSelectPiece:self.piece];
-}
+
 
 -(void)setPiece:(NSDictionary *)piece
 {
     _piece=piece;
     [self updateUI];
-    UITapGestureRecognizer *gestrue=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(choose)];
-    [self.label addGestureRecognizer:gestrue];
 
 }
 
 -(void)updateUI
 {
     CGSize size=[self measureTextHeight:self.piece[@"content"] fontSize:18 constrainedToSize:CGSizeMake(250, 350)];
-    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+40);
+    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+30);
     self.label.text=self.piece[@"content"];
     
     self.label.layer.shadowColor = [UIColor grayColor].CGColor;
