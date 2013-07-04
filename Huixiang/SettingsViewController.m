@@ -12,12 +12,10 @@
 #import "Settings.h"
 
 @interface SettingsViewController ()<MFMailComposeViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UISwitch *sinaWeiboBindingSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *weiboNameLabel;
 @end
 
 @implementation SettingsViewController
-@synthesize sinaWeiboBindingSwitch=_sinaWeiboBindingSwitch;
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -41,16 +39,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.weiboNameLabel.text=[Settings getUser][@"name"];
-    BOOL notBind=[[NSUserDefaults standardUserDefaults]boolForKey:@"notbind"];
-    if(notBind){
-        self.sinaWeiboBindingSwitch.on=NO;
-    }else{
-        self.sinaWeiboBindingSwitch.on=YES;
-    }
-  }
-
-- (IBAction)cancel:(id)sender {
-    [self.presentingViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)changeAccount:(id)sender {
@@ -59,23 +47,11 @@
 }
 
 
-- (IBAction)bind:(UISwitch *)sender {
-    if(sender.on){
-        [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"notbind"];
-    }else{
-        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"notbind"];
-    }
-    [[NSUserDefaults standardUserDefaults]synchronize];
-}
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section==1&&indexPath.row==1){
-       
-    }else if(indexPath.section==3&&indexPath.row==0){
+    if(indexPath.section==1&&indexPath.row==0){
         [self sendMail];
-    }else if(indexPath.section==3&&indexPath.row==1){
+    }else if(indexPath.section==1&&indexPath.row==1){
         [self goToRating];
     }
 }
@@ -93,7 +69,7 @@
         MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
         picker.navigationBar.tintColor=[UIColor blackColor];
         picker.mailComposeDelegate = self;
-        [picker setSubject:@"let's party反馈意见"];
+        [picker setSubject:@"茴香反馈意见"];
         [picker setToRecipients:[NSArray arrayWithObjects:@"yucong1118@gmail.com", nil]];
         [self presentModalViewController:picker animated:YES];
     }else{
@@ -132,7 +108,6 @@
 
 - (void)viewDidUnload
 {
-    [self setSinaWeiboBindingSwitch:nil];
     [self setWeiboNameLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
