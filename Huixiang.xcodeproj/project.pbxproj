@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA29CAD11786A66900452B91 /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAD01786A66900452B91 /* UIHelper.m */; };
 		FA2AA8D017854040000D63FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AA8CF17854040000D63FC /* StoreKit.framework */; };
 		FA2AA8D417854075000D63FC /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AA8D317854075000D63FC /* IAPHelper.m */; };
 		FA2AA8D7178540F8000D63FC /* HuixiangIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AA8D6178540F8000D63FC /* HuixiangIAPHelper.m */; };
@@ -74,6 +75,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA29CACF1786A66900452B91 /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
+		FA29CAD01786A66900452B91 /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		FA2AA8CF17854040000D63FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FA2AA8D217854075000D63FC /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		FA2AA8D317854075000D63FC /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
@@ -178,6 +181,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA29CACE1786A63D00452B91 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC39AE178570D50089E61E /* InsetsLabel.h */,
+				FAEC39AF178570D50089E61E /* InsetsLabel.m */,
+				FA29CACF1786A66900452B91 /* UIHelper.h */,
+				FA29CAD01786A66900452B91 /* UIHelper.m */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
 		FA2AA8D117854056000D63FC /* iap */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,8 +340,7 @@
 		FAE9B0CF17698F92007BC364 /* Huixiang */ = {
 			isa = PBXGroup;
 			children = (
-				FAEC39AE178570D50089E61E /* InsetsLabel.h */,
-				FAEC39AF178570D50089E61E /* InsetsLabel.m */,
+				FA29CACE1786A63D00452B91 /* ui */,
 				FA2AA8D117854056000D63FC /* iap */,
 				FA7F42D01783EDFD00AD26CB /* EGORefreshTableHeaderView */,
 				FA7F42D51783EDFD00AD26CB /* LoadingMoreFooterView */,
@@ -492,6 +505,7 @@
 				FA2AA8D417854075000D63FC /* IAPHelper.m in Sources */,
 				FA2AA8D7178540F8000D63FC /* HuixiangIAPHelper.m in Sources */,
 				FAEC39B0178570D50089E61E /* InsetsLabel.m in Sources */,
+				FA29CAD11786A66900452B91 /* UIHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

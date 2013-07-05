@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/ViewController.m"
-         timestampString = "394614726.541513"
+         timestampString = "394680423.008298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
          landmarkName = "-addToFav"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/ViewController.m"
-         timestampString = "394614726.541513"
+         timestampString = "394680423.008298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "191"
-         endingLineNumber = "191"
+         startingLineNumber = "180"
+         endingLineNumber = "180"
          landmarkName = "-addToFav"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/ViewController.m"
-         timestampString = "394614726.541513"
+         timestampString = "394680423.008298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "211"
-         endingLineNumber = "211"
+         startingLineNumber = "200"
+         endingLineNumber = "200"
          landmarkName = "-shareToWeibo"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/PieceCell.m"
-         timestampString = "394620920.321036"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
+         startingLineNumber = "30"
+         endingLineNumber = "30"
          landmarkName = "-updateUI"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/PieceCell.m"
-         timestampString = "394620920.321036"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "-setPiece:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/CollectionViewController.m"
-         timestampString = "394610948.346728"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-loadMore"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/ViewController.m"
-         timestampString = "394614726.541513"
+         timestampString = "394680423.008298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "188"
-         endingLineNumber = "188"
+         startingLineNumber = "177"
+         endingLineNumber = "177"
          landmarkName = "-addToFav"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/ViewController.m"
-         timestampString = "394614726.541513"
+         timestampString = "394680423.008298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
          landmarkName = "-sharePiece:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,12 +151,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/ViewController.m"
-         timestampString = "394614726.541513"
+         timestampString = "394680423.008298"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "155"
-         endingLineNumber = "155"
+         startingLineNumber = "144"
+         endingLineNumber = "144"
          landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Huixiang/CollectionViewController.m"
+         timestampString = "394700607.592492"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Huixiang/CollectionViewController.m"
+         timestampString = "394700607.592492"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "202"
+         endingLineNumber = "202"
+         landmarkName = "-deletePiece"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

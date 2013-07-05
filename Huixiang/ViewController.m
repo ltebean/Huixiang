@@ -32,7 +32,7 @@ alertViewType;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property(nonatomic,strong) NSMutableArray* pieces;
 @property (nonatomic, strong) HMSideMenu *sideMenu;
-@property int currentIndex;
+@property int count;
 @property BOOL loaded;
 @end
 
@@ -60,7 +60,7 @@ alertViewType;
     UIView *favItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [favItem setMenuActionWithBlock:^{
         if(![Settings getUser]){
-            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"需要登录才能收藏哦" delegate:self cancelButtonTitle:nil otherButtonTitles:@"不了",@"通过weibo登录",nil];
+            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"需要登录才能收藏哦" delegate:self cancelButtonTitle:nil otherButtonTitles:@"不了",@"通过微博登录",nil];
             alert.tag=alertViewTypeAuthConfirm;
             [alert show];
         }else{
@@ -71,16 +71,6 @@ alertViewType;
     [favIcon setImage:[UIImage imageNamed:@"fav"]];
     [favItem addSubview:favIcon];
     
-    
-    //mailItem
-    UIView *emailItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [emailItem setMenuActionWithBlock:^{
-        NSLog(@"tapped email item");
-    }];
-    UIImageView *emailIcon = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 30 , 30)];
-    [emailIcon setImage:[UIImage imageNamed:@"email"]];
-    [emailItem addSubview:emailIcon];
-    
     //weiboItem
     UIView *weiboItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [weiboItem setMenuActionWithBlock:^{
@@ -88,7 +78,7 @@ alertViewType;
             [self performSegueWithIdentifier:@"auth" sender:nil];
             return;
         }else{
-            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"转发到微博" delegate:self cancelButtonTitle:nil otherButtonTitles:@"No",@"Yes",nil];
+            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"转发到微博" delegate:self cancelButtonTitle:nil otherButtonTitles:@"不了",@"好的",nil];
             alert.tag=alertViewTypeWeiboShareConfirm;
             [alert show];
         }
@@ -98,7 +88,7 @@ alertViewType;
     [weiboIcon setImage:[UIImage imageNamed:@"weibo"]];
     [weiboItem addSubview:weiboIcon];
     
-    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[favItem,weiboItem,]];
+    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[favItem,weiboItem]];
     self.sideMenu.menuPosition=HMSideMenuPositionTop;
     [self.sideMenu setItemSpacing:20.0f];
     [self.carousel addSubview:self.sideMenu];
@@ -114,7 +104,7 @@ alertViewType;
     self.carousel.delegate=self;
     self.carousel.type = iCarouselTypeTimeMachine;
     
-    self.currentIndex=0;
+    self.count=0;
     self.loaded=NO;
 	// Do any additional setup after loading the view, typically from a nib.
 
@@ -124,6 +114,7 @@ alertViewType;
 {
     [super viewWillAppear:YES];
     if(!self.loaded){
+        [SVProgressHUD showWithStatus:@"加载中"];
         [self refreshData];
     }
 }
@@ -131,8 +122,6 @@ alertViewType;
 
 -(void)refreshData
 {
-    [SVProgressHUD showWithStatus:@"加载中"];
-
     [HTTP sendRequestToPath:@"/pieces" method:@"GET" params:nil cookies:nil completionHandler:^(id data) {
         self.pieces=data;
         self.loaded=YES;
@@ -257,6 +246,12 @@ alertViewType;
         
     }
     ((PieceView*)view).piece=self.pieces[index];
+    
+    self.count++;
+    if(self.count==108){
+        self.count=0;
+        [self refreshData];
+    }
   	return view;
     
 }

@@ -8,12 +8,12 @@
 
 #import "PieceView.h"
 #import <QuartzCore/CoreAnimation.h>
+#import "UIHelper.h"
+
 @interface PieceView()
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @end
 @implementation PieceView
-
-
 
 -(void)setPiece:(NSDictionary *)piece
 {
@@ -24,7 +24,7 @@
 
 -(void)updateUI
 {
-    CGSize size=[self measureTextHeight:self.piece[@"content"] fontSize:20 constrainedToSize:CGSizeMake(250, 350)];
+    CGSize size=[UIHelper measureTextHeight:self.piece[@"content"] UIFont:self.label.font constrainedToSize:CGSizeMake(250, 400)];
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+30);
     self.label.text=self.piece[@"content"];
     
@@ -35,10 +35,5 @@
     self.label.clipsToBounds = NO;
 }
 
--(CGSize)measureTextHeight:(NSString*)text fontSize:(CGFloat)fontSize constrainedToSize:(CGSize)constrainedToSize
-{
-    CGSize mTempSize = [text sizeWithFont:[UIFont fontWithName:@"Hiragino Kaku Gothic ProN" size:fontSize] constrainedToSize:constrainedToSize lineBreakMode:UILineBreakModeWordWrap];
-    return mTempSize;
-}
 
 @end
