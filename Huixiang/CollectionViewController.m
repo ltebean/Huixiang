@@ -13,9 +13,11 @@
 #import "HTTP.h"
 #import "EGORefreshTableHeaderView.h"
 #import "LoadingMoreFooterView.h"
+#import "WeiboHTTP.h"
 
-@interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,UIScrollViewDelegate,UIAlertViewDelegate>
-@property(nonatomic,strong)NSMutableArray* pieces;
+@interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,UIScrollViewDelegate,UIAlertViewDelegate,UIActionSheetDelegate>
+@property(nonatomic,strong) NSMutableArray* pieces;
+@property(nonatomic) int currentIndex;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic)BOOL loaded;
 @property(nonatomic)int page;
@@ -95,7 +97,7 @@
 
 -(void)showAuthConfirm
 {
-    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"需要登录才能收藏哦" delegate:self cancelButtonTitle:nil otherButtonTitles:@"不了",@"通过weibo登录",nil];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"需要登录才能收藏哦" delegate:self cancelButtonTitle:nil otherButtonTitles:@"不了",@"通过微博登录",nil];
     [alert show];
 }
 
@@ -104,6 +106,7 @@
     NSDictionary* user=[Settings getUser];
     if(!user){
         [self showAuthConfirm];
+        return;
     }
     self.page=1;
     [SVProgressHUD showWithStatus:@"加载中"];
@@ -127,6 +130,7 @@
     NSDictionary* user=[Settings getUser];
     if(!user){
         [self showAuthConfirm];
+        return;
     }
     [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:@{@"page":[NSString stringWithFormat:@"%d",self.page]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
         if(data && data.count>0){
@@ -138,9 +142,7 @@
             [SVProgressHUD showErrorWithStatus:@"没有更多咯"];
         }
         [self didLoadMore];
-        
     }];
-    
 }
 
 #pragma mark UITableViewDatasource
@@ -170,13 +172,55 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.currentIndex=indexPath.row;
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                         destructiveButtonTitle:@"从收藏中删除"
+                                              otherButtonTitles:@"分享到微博",nil];
     
+    sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    [sheet showInView:[self.view window]];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==0){
+        [self deletePiece];
+    }else if(buttonIndex==1){
+        [self shareToWeibo];
+    }
+}
+
+-(void)deletePiece
+{
+    [SVProgressHUD showWithStatus:@"删除"];
+    NSDictionary* user=[Settings getUser];
+    [HTTP sendRequestToPath:@"/unfav" method:@"POST" params:@{@"pieceid":self.pieces[self.currentIndex][@"id"]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+        [self.pieces removeObjectAtIndex:self.currentIndex];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+        [SVProgressHUD dismiss];
+    }];
+}
+
+-(void)shareToWeibo
+{
+    NSDictionary* user=[Settings getUser];
+    if(!user){
+        [self performSegueWithIdentifier:@"auth" sender:nil];
+        return;
+    }
+    [SVProgressHUD showWithStatus:@"分享"];
+    NSString* content=self.pieces[self.currentIndex][@"content"];
+    [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
+        [SVProgressHUD showSuccessWithStatus:@"成功"];
+    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath  *)indexPath
 {
     NSString* content=self.pieces[indexPath.row][@"content"];
-    return [self measureTextHeight:content fontSize:18 constrainedToSize:CGSizeMake(290, 500)].height+54;
+    return [self measureTextHeight:content fontSize:18 constrainedToSize:CGSizeMake(250, 700)].height+58;
 }
 
 -(CGSize)measureTextHeight:(NSString*)text fontSize:(CGFloat)fontSize constrainedToSize:(CGSize)constrainedToSize

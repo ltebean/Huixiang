@@ -24,7 +24,7 @@
 
 -(void)updateUI
 {
-    CGSize size=[self measureTextHeight:self.piece[@"content"] fontSize:20 constrainedToSize:CGSizeMake(250, 350)];
+    CGSize size=[self measureTextHeight:self.piece[@"content"] fontSize:19 constrainedToSize:CGSizeMake(250, 350)];
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+30);
     self.label.text=self.piece[@"content"];
     
