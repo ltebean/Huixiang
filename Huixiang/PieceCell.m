@@ -8,6 +8,7 @@
 
 #import "PieceCell.h"
 #import <QuartzCore/CoreAnimation.h>
+#import "UIHelper.h"
 
 @interface PieceCell()
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -24,7 +25,8 @@
 
 -(void)updateUI
 {
-    CGSize size=[self measureTextHeight:self.piece[@"content"] fontSize:18 constrainedToSize:CGSizeMake(250, 500)];
+    CGSize size=[UIHelper measureTextHeight:self.piece[@"content"] UIFont:self.label.font constrainedToSize:LABEL_SIZE];
+    
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 296, size.height+44);
     self.label.text=self.piece[@"content"];
     
@@ -34,12 +36,6 @@
     self.label.layer.shadowOffset = CGSizeMake(3, 3);
     self.label.clipsToBounds = NO;
 
-}
-
--(CGSize)measureTextHeight:(NSString*)text fontSize:(CGFloat)fontSize constrainedToSize:(CGSize)constrainedToSize
-{
-    CGSize mTempSize = [text sizeWithFont:[UIFont fontWithName:@"Hiragino Kaku Gothic ProN" size:fontSize] constrainedToSize:constrainedToSize lineBreakMode:UILineBreakModeWordWrap];
-    return mTempSize;
 }
 
 @end

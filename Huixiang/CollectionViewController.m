@@ -14,6 +14,7 @@
 #import "EGORefreshTableHeaderView.h"
 #import "LoadingMoreFooterView.h"
 #import "WeiboHTTP.h"
+#import "UIHelper.h"
 
 @interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,UIScrollViewDelegate,UIAlertViewDelegate,UIActionSheetDelegate>
 @property(nonatomic,strong) NSMutableArray* pieces;
@@ -220,13 +221,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath  *)indexPath
 {
     NSString* content=self.pieces[indexPath.row][@"content"];
-    return [self measureTextHeight:content fontSize:18 constrainedToSize:CGSizeMake(250, 700)].height+58;
-}
-
--(CGSize)measureTextHeight:(NSString*)text fontSize:(CGFloat)fontSize constrainedToSize:(CGSize)constrainedToSize
-{
-    CGSize mTempSize = [text sizeWithFont:[UIFont fontWithName:@"Hiragino Kaku Gothic ProN" size:fontSize] constrainedToSize:constrainedToSize lineBreakMode:UILineBreakModeWordWrap];
-    return mTempSize;
+    return [UIHelper measureTextHeight:content UIFont:[UIFont fontWithName:LABEL_FONT_NAME size:LABEL_FONT_SIZE] constrainedToSize:LABEL_SIZE].height+58;
 }
 
 #pragma mark UITableViewDelegate

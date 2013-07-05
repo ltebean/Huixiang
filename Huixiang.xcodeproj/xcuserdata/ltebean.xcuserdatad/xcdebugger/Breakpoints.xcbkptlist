@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/PieceCell.m"
-         timestampString = "394620920.321036"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
+         startingLineNumber = "30"
+         endingLineNumber = "30"
          landmarkName = "-updateUI"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/PieceCell.m"
-         timestampString = "394620920.321036"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "-setPiece:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/CollectionViewController.m"
-         timestampString = "394694633.780227"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-loadMore"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/CollectionViewController.m"
-         timestampString = "394694633.780227"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Huixiang/CollectionViewController.m"
-         timestampString = "394695041.037742"
+         timestampString = "394700607.592492"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "201"
-         endingLineNumber = "201"
+         startingLineNumber = "202"
+         endingLineNumber = "202"
          landmarkName = "-deletePiece"
          landmarkType = "5">
       </FileBreakpoint>
