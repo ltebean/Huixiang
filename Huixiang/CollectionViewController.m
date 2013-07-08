@@ -164,6 +164,7 @@
     PieceCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell=[[PieceCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+
     }
     cell.piece=[self.pieces objectAtIndex:indexPath.row];
     return cell;

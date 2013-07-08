@@ -15,12 +15,24 @@
 @end
 @implementation PieceView
 
+- (void) awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.label.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.label.layer.shadowOpacity = 0.6;
+    self.label.layer.shadowRadius = 1.0;
+    self.label.layer.shadowOffset = CGSizeMake(3, 3);
+    self.label.clipsToBounds = NO;
+}
+
+
 -(void)setPiece:(NSDictionary *)piece
 {
     _piece=piece;
     [self updateUI];
-
 }
+
 
 -(void)updateUI
 {
@@ -28,11 +40,6 @@
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+30);
     self.label.text=self.piece[@"content"];
     
-    self.label.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.label.layer.shadowOpacity = 0.7;
-    self.label.layer.shadowRadius = 1.0;
-    self.label.layer.shadowOffset = CGSizeMake(3, 3);
-    self.label.clipsToBounds = NO;
 }
 
 

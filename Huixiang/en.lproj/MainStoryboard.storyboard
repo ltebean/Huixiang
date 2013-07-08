@@ -379,51 +379,6 @@
         <image name="navbar@2x.png" width="640" height="88"/>
         <image name="pen-btn.png" width="84" height="85"/>
     </resources>
-    <classes>
-        <class className="CollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CollectionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="InsetsLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InsetsLabel.h"/>
-        </class>
-        <class className="PieceCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PieceCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="productLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weiboNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SinaWeiboAuthViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SinaWeiboAuthViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="share:"/>
-                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
-            </relationships>
-        </class>
-        <class className="iCarousel" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataSource"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

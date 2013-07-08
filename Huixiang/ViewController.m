@@ -110,9 +110,9 @@ alertViewType;
 
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:YES];
+    [super viewDidAppear:YES];
     if(!self.loaded){
         [SVProgressHUD showWithStatus:@"加载中"];
         [self refreshData];
@@ -242,9 +242,9 @@ alertViewType;
         NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"PieceView"
                                                           owner:self
                                                         options:nil];
-        view=[nibViews lastObject];
-        
+        view=[nibViews lastObject];        
     }
+    
     ((PieceView*)view).piece=self.pieces[index];
     
     self.count++;

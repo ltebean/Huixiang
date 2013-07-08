@@ -12,10 +12,12 @@
 
 @interface PieceCell()
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (nonatomic) BOOL inited;
 @end
 
 
 @implementation PieceCell
+
 
 -(void)setPiece:(NSDictionary *)piece
 {
@@ -25,16 +27,19 @@
 
 -(void)updateUI
 {
+    if(!self.inited){
+        self.label.layer.shadowColor = [UIColor grayColor].CGColor;
+        self.label.layer.shadowOpacity = 0.6;
+        self.label.layer.shadowRadius = 1.0;
+        self.label.layer.shadowOffset = CGSizeMake(3, 3);
+        self.label.clipsToBounds = NO;
+        self.inited=YES;
+    }
+    
     CGSize size=[UIHelper measureTextHeight:self.piece[@"content"] UIFont:self.label.font constrainedToSize:LABEL_SIZE];
     
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 296, size.height+44);
     self.label.text=self.piece[@"content"];
-    
-    self.label.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.label.layer.shadowOpacity = 0.7;
-    self.label.layer.shadowRadius = 1.0;
-    self.label.layer.shadowOffset = CGSizeMake(3, 3);
-    self.label.clipsToBounds = NO;
 
 }
 
