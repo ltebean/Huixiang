@@ -20,9 +20,9 @@
     [super awakeFromNib];
     
     self.label.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.label.layer.shadowOpacity = 0.6;
-    self.label.layer.shadowRadius = 1.0;
-    self.label.layer.shadowOffset = CGSizeMake(3, 3);
+    self.label.layer.shadowOpacity = 0.5;
+    self.label.layer.shadowRadius = 5.0;
+    self.label.layer.shadowOffset = CGSizeMake(0, 0);
     self.label.clipsToBounds = NO;
     
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handle:)];
@@ -50,7 +50,7 @@
     CGSize size=[UIHelper measureTextHeight:self.piece[@"content"] UIFont:self.label.font constrainedToSize:CGSizeMake(250, 400)];
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+30);
     self.label.text=self.piece[@"content"];
-    
+    self.label.textAlignment = UITextAlignmentLeft;
 }
 
 

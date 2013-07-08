@@ -29,9 +29,9 @@
 {
     if(!self.inited){
         self.label.layer.shadowColor = [UIColor grayColor].CGColor;
-        self.label.layer.shadowOpacity = 0.6;
-        self.label.layer.shadowRadius = 1.0;
-        self.label.layer.shadowOffset = CGSizeMake(3, 3);
+        self.label.layer.shadowOpacity = 0.7;
+        self.label.layer.shadowRadius = 2.0;
+        self.label.layer.shadowOffset = CGSizeMake(0, 1);
         self.label.clipsToBounds = NO;
         self.inited=YES;
     }
