@@ -24,7 +24,6 @@
     self.label.layer.shadowRadius = 5.0;
     self.label.layer.shadowOffset = CGSizeMake(0, 0);
     self.label.clipsToBounds = NO;
-    self.label.font=[UIFont fontWithName:@"HiraginoSansGB-W3" size:19];
     
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handle:)];
     [self addGestureRecognizer:recognizer];

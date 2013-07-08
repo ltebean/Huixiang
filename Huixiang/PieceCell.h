@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #define LABEL_SIZE CGSizeMake(250, 800)
-#define LABEL_FONT_NAME @"HiraginoSansGB-W3"
+#define LABEL_FONT_NAME @"Hiragino Kaku Gothic ProN"
 #define LABEL_FONT_SIZE 18
 
 @interface PieceCell : UITableViewCell
+
 @property(nonatomic,strong) NSDictionary* piece;
 @end

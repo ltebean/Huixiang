@@ -59,10 +59,6 @@
 			<true/>
 		</dict>
 	</dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Hiragino Sans GB W3.otf</string>
-	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

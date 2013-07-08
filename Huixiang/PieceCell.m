@@ -33,7 +33,6 @@
         self.label.layer.shadowRadius = 2.0;
         self.label.layer.shadowOffset = CGSizeMake(0, 1);
         self.label.clipsToBounds = NO;
-        self.label.font=[UIFont fontWithName:@"HiraginoSansGB-W3" size:18];
         self.inited=YES;
     }
     
