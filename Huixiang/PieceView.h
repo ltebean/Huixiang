@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PieceViewDelegate <NSObject>
+
+-(void)didSwipe;
+
+@end
+
 @interface PieceView : UIView
 @property(nonatomic,strong) NSDictionary* piece;
+@property(nonatomic,weak) id<PieceViewDelegate>delegate;
+
 @end

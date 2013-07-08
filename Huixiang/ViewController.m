@@ -17,7 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
-#define ITEM_SPACING 280.0f
+#define ITEM_SPACING 200.0f
 #define INCLUDE_PLACEHOLDERS YES
 
 typedef enum
@@ -28,7 +28,7 @@ typedef enum
 }
 alertViewType;
 
-@interface ViewController ()<iCarouselDataSource, iCarouselDelegate,UIAlertViewDelegate>
+@interface ViewController ()<iCarouselDataSource, iCarouselDelegate,UIAlertViewDelegate,PieceViewDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property(nonatomic,strong) NSMutableArray* pieces;
 @property (nonatomic, strong) HMSideMenu *sideMenu;
@@ -44,7 +44,7 @@ alertViewType;
     if(self){
         [super viewDidLoad];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"看看" image:nil tag:0];
-        [[self tabBarItem] setFinishedSelectedImage:[UIImage imageNamed:@"main.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"main.png"]];
+        [[self tabBarItem] setFinishedSelectedImage:[UIImage imageNamed:@"leaf.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"leaf.png"]];
         [[self tabBarItem] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                    [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
                                                    nil] forState:UIControlStateNormal];
@@ -103,16 +103,18 @@ alertViewType;
     self.carousel.dataSource=self;
     self.carousel.delegate=self;
     self.carousel.type = iCarouselTypeTimeMachine;
-    
+    self.carousel.scrollEnabled=NO;
     self.count=0;
     self.loaded=NO;
 	// Do any additional setup after loading the view, typically from a nib.
-
+    
+  
 }
 
--(void)viewWillAppear:(BOOL)animated
+
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:YES];
+    [super viewDidAppear:YES];
     if(!self.loaded){
         [SVProgressHUD showWithStatus:@"加载中"];
         [self refreshData];
@@ -123,6 +125,10 @@ alertViewType;
 -(void)refreshData
 {
     [HTTP sendRequestToPath:@"/pieces" method:@"GET" params:nil cookies:nil completionHandler:^(id data) {
+        if(!data){
+            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
+            return;
+        }
         self.pieces=data;
         self.loaded=YES;
         [SVProgressHUD dismiss];
@@ -196,9 +202,17 @@ alertViewType;
 
     [SVProgressHUD showWithStatus:@"分享"];
     NSString* content=piece[@"content"];
-        [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
+    [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
+        if(!data){
+            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
+            return;
+        }
+        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]){
+            [SVProgressHUD showErrorWithStatus:@"授权过期，请重新授权"];
+        }else{
             [SVProgressHUD showSuccessWithStatus:@"成功"];
-        }];
+        }
+    }];
 }
 
 - (IBAction)share:(id)sender {
@@ -242,25 +256,33 @@ alertViewType;
         NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"PieceView"
                                                           owner:self
                                                         options:nil];
-        view=[nibViews lastObject];
-        
+        view=[nibViews lastObject];        
     }
-    ((PieceView*)view).piece=self.pieces[index];
     
+    ((PieceView*)view).piece=self.pieces[index];
+    ((PieceView*)view).delegate=self;
+
+  	return view;
+    
+}
+
+-(void)didSwipe
+{
+    if(self.sideMenu.isOpen){
+        [self.sideMenu close];
+    }
     self.count++;
-    if(self.count==108){
+    if(self.count==self.pieces.count){
         self.count=0;
         [self refreshData];
     }
-  	return view;
+    [self.carousel scrollByNumberOfItems:-1 duration:0.5];
     
 }
 
 - (void)carouselWillBeginDragging:(iCarousel *)carousel;
 {
-    if(self.sideMenu.isOpen){
-        [self.sideMenu close];
-    }
+    
 }
 
 -(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index

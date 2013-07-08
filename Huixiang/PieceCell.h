@@ -13,5 +13,4 @@
 
 @interface PieceCell : UITableViewCell
 @property(nonatomic,strong) NSDictionary* piece;
-
 @end
