@@ -238,7 +238,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath  *)indexPath
 {
     NSString* content=self.pieces[indexPath.row][@"content"];
-    return [UIHelper measureTextHeight:content UIFont:[UIFont fontWithName:LABEL_FONT_NAME size:LABEL_FONT_SIZE] constrainedToSize:LABEL_SIZE].height+58;
+    return [UIHelper measureTextHeight:content UIFont:[UIFont fontWithName:LABEL_FONT_NAME size:LABEL_FONT_SIZE] constrainedToSize:LABEL_SIZE].height+50;
 }
 
 #pragma mark UITableViewDelegate

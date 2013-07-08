@@ -12,6 +12,7 @@
 		FA25E60C178A854700423752 /* quill.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25E60B178A854700423752 /* quill.png */; };
 		FA25E60F178A864C00423752 /* love.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25E60D178A864C00423752 /* love.png */; };
 		FA25E610178A864C00423752 /* love@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25E60E178A864C00423752 /* love@2x.png */; };
+		FA25E614178A9B6000423752 /* Hiragino Sans GB W3.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA25E612178A9B6000423752 /* Hiragino Sans GB W3.otf */; };
 		FA29CAD11786A66900452B91 /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA29CAD01786A66900452B91 /* UIHelper.m */; };
 		FA2AA8D017854040000D63FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2AA8CF17854040000D63FC /* StoreKit.framework */; };
 		FA2AA8D417854075000D63FC /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AA8D317854075000D63FC /* IAPHelper.m */; };
@@ -85,6 +86,7 @@
 		FA25E60B178A854700423752 /* quill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quill.png; sourceTree = "<group>"; };
 		FA25E60D178A864C00423752 /* love.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = love.png; sourceTree = "<group>"; };
 		FA25E60E178A864C00423752 /* love@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "love@2x.png"; sourceTree = "<group>"; };
+		FA25E612178A9B6000423752 /* Hiragino Sans GB W3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W3.otf"; sourceTree = "<group>"; };
 		FA29CACF1786A66900452B91 /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
 		FA29CAD01786A66900452B91 /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		FA2AA8CF17854040000D63FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -191,6 +193,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA25E611178A9B4700423752 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA25E612178A9B6000423752 /* Hiragino Sans GB W3.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		FA29CACE1786A63D00452B91 /* ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +401,7 @@
 		FAE9B0D017698F92007BC364 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA25E611178A9B4700423752 /* fonts */,
 				FA7F42BC1783DFFF00AD26CB /* Images */,
 				FAC965C51782AC00009CB3B1 /* img */,
 				FAE9B0D117698F92007BC364 /* Huixiang-Info.plist */,
@@ -496,6 +507,7 @@
 				FA25E60C178A854700423752 /* quill.png in Resources */,
 				FA25E60F178A864C00423752 /* love.png in Resources */,
 				FA25E610178A864C00423752 /* love@2x.png in Resources */,
+				FA25E614178A9B6000423752 /* Hiragino Sans GB W3.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,16 +29,17 @@
 {
     if(!self.inited){
         self.label.layer.shadowColor = [UIColor grayColor].CGColor;
-        self.label.layer.shadowOpacity = 0.6;
-        self.label.layer.shadowRadius = 1.0;
-        self.label.layer.shadowOffset = CGSizeMake(3, 3);
+        self.label.layer.shadowOpacity = 0.7;
+        self.label.layer.shadowRadius = 2.0;
+        self.label.layer.shadowOffset = CGSizeMake(0, 1);
         self.label.clipsToBounds = NO;
+        self.label.font=[UIFont fontWithName:@"HiraginoSansGB-W3" size:18];
         self.inited=YES;
     }
     
     CGSize size=[UIHelper measureTextHeight:self.piece[@"content"] UIFont:self.label.font constrainedToSize:LABEL_SIZE];
     
-    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 296, size.height+44);
+    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 296, size.height+36);
     self.label.text=self.piece[@"content"];
 
 }

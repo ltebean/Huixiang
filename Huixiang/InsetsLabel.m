@@ -10,7 +10,7 @@
 
 @implementation InsetsLabel
 - (void)drawTextInRect:(CGRect)rect {
-    UIEdgeInsets insets = {10, 20, 5, 20};
+    UIEdgeInsets insets = {10, 20, 0, 20};
     return [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
 }
 @end

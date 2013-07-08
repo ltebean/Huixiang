@@ -58,16 +58,15 @@
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<int key="IBUINumberOfLines">13</int>
-						<int key="IBUITextAlignment">1</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<string key="name">HiraKakuProN-W3</string>
 							<string key="family">Hiragino Kaku Gothic ProN</string>
 							<int key="traits">0</int>
-							<double key="pointSize">19</double>
+							<double key="pointSize">21</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">HiraKakuProN-W3</string>
-							<double key="NSSize">19</double>
+							<double key="NSSize">21</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>

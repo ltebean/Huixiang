@@ -20,10 +20,11 @@
     [super awakeFromNib];
     
     self.label.layer.shadowColor = [UIColor grayColor].CGColor;
-    self.label.layer.shadowOpacity = 0.6;
-    self.label.layer.shadowRadius = 1.0;
-    self.label.layer.shadowOffset = CGSizeMake(3, 3);
+    self.label.layer.shadowOpacity = 0.5;
+    self.label.layer.shadowRadius = 5.0;
+    self.label.layer.shadowOffset = CGSizeMake(0, 0);
     self.label.clipsToBounds = NO;
+    self.label.font=[UIFont fontWithName:@"HiraginoSansGB-W3" size:19];
     
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handle:)];
     [self addGestureRecognizer:recognizer];
