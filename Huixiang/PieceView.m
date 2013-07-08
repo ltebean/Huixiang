@@ -24,6 +24,17 @@
     self.label.layer.shadowRadius = 1.0;
     self.label.layer.shadowOffset = CGSizeMake(3, 3);
     self.label.clipsToBounds = NO;
+    
+    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handle:)];
+    [self addGestureRecognizer:recognizer];
+}
+
+-(void)handle:(UIPanGestureRecognizer *)recognizer {
+    CGPoint velocity = [recognizer velocityInView:self];
+
+    if([recognizer state] == UIGestureRecognizerStateEnded && velocity.x > 0) {
+        [self.delegate didSwipe];
+    }
 }
 
 

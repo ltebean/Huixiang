@@ -36,7 +36,7 @@
     self=[super initWithCoder:aDecoder];
     if(self){
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"收藏" image:nil tag:0];
-        [[self tabBarItem] setFinishedSelectedImage:[UIImage imageNamed:@"favorites.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"favorites.png"]];
+        [[self tabBarItem] setFinishedSelectedImage:[UIImage imageNamed:@"love.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"love.png"]];
         [[self tabBarItem] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                    [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
                                                    nil] forState:UIControlStateNormal];
@@ -112,11 +112,14 @@
     self.page=1;
     [SVProgressHUD showWithStatus:@"加载中"];
     [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:nil cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+        if(!data){
+            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
+            return;
+        }
         if(data && data.count>0){
             self.pieces=[data mutableCopy];
             self.loaded=YES;
             self.page++;
-            
             [SVProgressHUD dismiss];
             [self.tableView reloadData];
         }else{
@@ -134,6 +137,11 @@
         return;
     }
     [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:@{@"page":[NSString stringWithFormat:@"%d",self.page]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+        if(!data){
+            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
+            [self didLoadMore];
+            return;
+        }
         if(data && data.count>0){
             [self.pieces addObjectsFromArray:data];
             [self.tableView reloadData];
@@ -198,7 +206,7 @@
 {
     [SVProgressHUD showWithStatus:@"删除"];
     NSDictionary* user=[Settings getUser];
-    [HTTP sendRequestToPath:@"/unfav" method:@"POST" params:@{@"pieceid":self.pieces[self.currentIndex][@"id"]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+    [HTTP sendRequestToPath:@"/unfav" method:@"POST" params:@{@"pieceid":self.pieces[self.currentIndex][@"id"]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(id data) {
         [self.pieces removeObjectAtIndex:self.currentIndex];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
         [SVProgressHUD dismiss];
@@ -215,7 +223,15 @@
     [SVProgressHUD showWithStatus:@"分享"];
     NSString* content=self.pieces[self.currentIndex][@"content"];
     [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
-        [SVProgressHUD showSuccessWithStatus:@"成功"];
+        if(!data){
+            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
+            return;
+        }
+        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]){
+            [SVProgressHUD showErrorWithStatus:@"授权过期，请重新授权"];
+        }else{
+            [SVProgressHUD showSuccessWithStatus:@"成功"];
+        }
     }];
 }
 
