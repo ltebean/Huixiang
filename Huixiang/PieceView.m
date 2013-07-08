@@ -51,7 +51,7 @@
     CGSize size=[UIHelper measureTextHeight:self.piece[@"content"] UIFont:self.label.font constrainedToSize:CGSizeMake(250, 400)];
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+30);
     self.label.text=self.piece[@"content"];
-    
+    self.label.textAlignment = UITextAlignmentLeft;
 }
 
 
