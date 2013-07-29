@@ -9,7 +9,7 @@
 #import "HTTP.h"
 #define WEIBO_DOMAIN_URL @"https://api.weibo.com/2"
 
-@interface WeiboHTTP 
+@interface WeiboHTTP: NSObject 
 
 +(void)sendRequestToPath:(NSString*)url method:(NSString*)method params:(NSDictionary*)params  completionHandler:(void (^)(id)) completionHandler ;
 

@@ -586,15 +586,15 @@
 		FAE9B0EA17698F92007BC364 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "茴香";
-				PROVISIONING_PROFILE = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
+				PROVISIONING_PROFILE = "D4F0BCE3-D587-4E87-813C-734866B9225E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D4F0BCE3-D587-4E87-813C-734866B9225E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -602,15 +602,15 @@
 		FAE9B0EB17698F92007BC364 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "茴香";
-				PROVISIONING_PROFILE = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
+				PROVISIONING_PROFILE = "D4F0BCE3-D587-4E87-813C-734866B9225E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D4F0BCE3-D587-4E87-813C-734866B9225E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

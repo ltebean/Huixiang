@@ -221,13 +221,14 @@
         return;
     }
     [SVProgressHUD showWithStatus:@"分享"];
-    NSString* content=self.pieces[self.currentIndex][@"content"];
+    NSString* piece=self.pieces[self.currentIndex][@"content"];
+    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香#",piece];
     [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
         if(!data){
             [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
             return;
         }
-        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]){
+        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]||[data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21332]]){
             [SVProgressHUD showErrorWithStatus:@"授权过期，请重新授权"];
         }else{
             [SVProgressHUD showSuccessWithStatus:@"成功"];

@@ -17,7 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
-#define ITEM_SPACING 200.0f
+#define ITEM_SPACING 130.0f
 #define INCLUDE_PLACEHOLDERS YES
 
 typedef enum
@@ -201,13 +201,14 @@ alertViewType;
     NSDictionary* piece=self.pieces[self.carousel.currentItemIndex];
 
     [SVProgressHUD showWithStatus:@"分享"];
-    NSString* content=piece[@"content"];
+    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香#",piece[@"content"]];
+
     [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
         if(!data){
             [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
             return;
         }
-        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]){
+        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]||[data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21332]]){
             [SVProgressHUD showErrorWithStatus:@"授权过期，请重新授权"];
         }else{
             [SVProgressHUD showSuccessWithStatus:@"成功"];
@@ -289,6 +290,8 @@ alertViewType;
 {
     if (!self.sideMenu.isOpen){
         [self.sideMenu open];
+    }else{
+        [self.sideMenu close];
     }
 }
 
