@@ -59,6 +59,9 @@
 		FA7F42F0178413F900AD26CB /* fav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42EE178413F900AD26CB /* fav@2x.png */; };
 		FA7F42F3178414D500AD26CB /* WeiboHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7F42F2178414D400AD26CB /* WeiboHTTP.m */; };
 		FA7F42F517841D5100AD26CB /* back-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = FA7F42F417841D5100AD26CB /* back-btn.png */; };
+		FA908AF217AF358800BF4135 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA908AEE17AF358800BF4135 /* libWeChatSDK_armv7_armv7s.a */; };
+		FADB6B9717AF53C000337FE4 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = FADB6B9517AF53C000337FE4 /* weixin.png */; };
+		FADB6B9817AF53C000337FE4 /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FADB6B9617AF53C000337FE4 /* weixin@2x.png */; };
 		FAE9B0CA17698F92007BC364 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE9B0C917698F92007BC364 /* UIKit.framework */; };
 		FAE9B0CC17698F92007BC364 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE9B0CB17698F92007BC364 /* Foundation.framework */; };
 		FAE9B0CE17698F92007BC364 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE9B0CD17698F92007BC364 /* CoreGraphics.framework */; };
@@ -139,6 +142,11 @@
 		FA7F42F1178414D300AD26CB /* WeiboHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboHTTP.h; sourceTree = "<group>"; };
 		FA7F42F2178414D400AD26CB /* WeiboHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboHTTP.m; sourceTree = "<group>"; };
 		FA7F42F417841D5100AD26CB /* back-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-btn.png"; sourceTree = "<group>"; };
+		FA908AEE17AF358800BF4135 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		FA908AF017AF358800BF4135 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		FA908AF117AF358800BF4135 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		FADB6B9517AF53C000337FE4 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
+		FADB6B9617AF53C000337FE4 /* weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@2x.png"; sourceTree = "<group>"; };
 		FAE9B0C617698F92007BC364 /* 茴香.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "茴香.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE9B0C917698F92007BC364 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAE9B0CB17698F92007BC364 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,6 +177,7 @@
 				FAE9B0CA17698F92007BC364 /* UIKit.framework in Frameworks */,
 				FAE9B0CC17698F92007BC364 /* Foundation.framework in Frameworks */,
 				FAE9B0CE17698F92007BC364 /* CoreGraphics.framework in Frameworks */,
+				FA908AF217AF358800BF4135 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +253,8 @@
 		FA7F42BC1783DFFF00AD26CB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FADB6B9517AF53C000337FE4 /* weixin.png */,
+				FADB6B9617AF53C000337FE4 /* weixin@2x.png */,
 				FA7F42ED178413F900AD26CB /* fav.png */,
 				FA7F42EE178413F900AD26CB /* fav@2x.png */,
 				FA7F42E51784112B00AD26CB /* weibo@2x.png */,
@@ -272,6 +283,16 @@
 				FA7F42D71783EDFE00AD26CB /* LoadingMoreFooterView.m */,
 			);
 			path = LoadingMoreFooterView;
+			sourceTree = "<group>";
+		};
+		FA908AED17AF357C00BF4135 /* weixin */ = {
+			isa = PBXGroup;
+			children = (
+				FA908AEE17AF358800BF4135 /* libWeChatSDK_armv7_armv7s.a */,
+				FA908AF017AF358800BF4135 /* WXApi.h */,
+				FA908AF117AF358800BF4135 /* WXApiObject.h */,
+			);
+			name = weixin;
 			sourceTree = "<group>";
 		};
 		FAC965C51782AC00009CB3B1 /* img */ = {
@@ -338,6 +359,7 @@
 		FAE9B0CF17698F92007BC364 /* Huixiang */ = {
 			isa = PBXGroup;
 			children = (
+				FA908AED17AF357C00BF4135 /* weixin */,
 				FA29CACE1786A63D00452B91 /* ui */,
 				FA2AA8D117854056000D63FC /* iap */,
 				FA7F42D01783EDFD00AD26CB /* EGORefreshTableHeaderView */,
@@ -472,6 +494,8 @@
 				FA25E60C178A854700423752 /* quill.png in Resources */,
 				FA25E60F178A864C00423752 /* love.png in Resources */,
 				FA25E610178A864C00423752 /* love@2x.png in Resources */,
+				FADB6B9717AF53C000337FE4 /* weixin.png in Resources */,
+				FADB6B9817AF53C000337FE4 /* weixin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,15 +610,19 @@
 		FAE9B0EA17698F92007BC364 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Huixiang\"",
+				);
 				PRODUCT_NAME = "茴香";
-				PROVISIONING_PROFILE = "D4F0BCE3-D587-4E87-813C-734866B9225E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D4F0BCE3-D587-4E87-813C-734866B9225E";
+				PROVISIONING_PROFILE = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -602,15 +630,19 @@
 		FAE9B0EB17698F92007BC364 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Cong Yu (LUAG5Z5ST3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Huixiang\"",
+				);
 				PRODUCT_NAME = "茴香";
-				PROVISIONING_PROFILE = "D4F0BCE3-D587-4E87-813C-734866B9225E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D4F0BCE3-D587-4E87-813C-734866B9225E";
+				PROVISIONING_PROFILE = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

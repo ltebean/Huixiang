@@ -15,6 +15,7 @@
 #import "SVProgressHUD.h"
 #import "WeiboHTTP.h"
 #import <QuartzCore/QuartzCore.h>
+#import "WXApi.h"
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
 #define ITEM_SPACING 130.0f
@@ -28,7 +29,7 @@ typedef enum
 }
 alertViewType;
 
-@interface ViewController ()<iCarouselDataSource, iCarouselDelegate,UIAlertViewDelegate,PieceViewDelegate>
+@interface ViewController ()<iCarouselDataSource, iCarouselDelegate,UIAlertViewDelegate,PieceViewDelegate,UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property(nonatomic,strong) NSMutableArray* pieces;
 @property (nonatomic, strong) HMSideMenu *sideMenu;
@@ -84,11 +85,27 @@ alertViewType;
         }
     }];
     UIImageView *weiboIcon = [[UIImageView alloc] initWithFrame:CGRectMake(1, 1, 38, 38)];
-    
     [weiboIcon setImage:[UIImage imageNamed:@"weibo"]];
     [weiboItem addSubview:weiboIcon];
     
-    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[favItem,weiboItem]];
+    //weiboItem
+    UIView *weixinItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [weixinItem setMenuActionWithBlock:^{
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:@"分享给微信好友",@"分享到微信朋友圈",nil];
+        
+        sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+        [sheet showInView:[self.view window]];
+    }];
+    UIImageView *weixinIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 2, 40, 40)];
+    [weixinIcon setImage:[UIImage imageNamed:@"weixin"]];
+    [weixinItem addSubview:weixinIcon];
+
+    
+    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[favItem,weiboItem,weixinItem]];
     self.sideMenu.menuPosition=HMSideMenuPositionTop;
     [self.sideMenu setItemSpacing:20.0f];
     [self.carousel addSubview:self.sideMenu];
@@ -231,6 +248,30 @@ alertViewType;
     alertView.tag=alertViewTypeShareInput;
     [alertView show];
 
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==0){
+        [self shareToWeixinIsTimeLine:NO];
+    }else if(buttonIndex==1){
+        [self shareToWeixinIsTimeLine:YES];
+    }
+}
+
+-(void)shareToWeixinIsTimeLine: (BOOL)isTimeLine
+{
+    if(![WXApi isWXAppInstalled]){
+        [SVProgressHUD showErrorWithStatus:@"还没有安装微信"];
+        return;
+    }
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText=YES;
+    req.text = self.pieces[self.carousel.currentItemIndex][@"content"];
+    if(isTimeLine){
+        req.scene=WXSceneTimeline;
+    }
+    [WXApi sendReq:req];
 }
 
 

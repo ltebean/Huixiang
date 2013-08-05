@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HuixiangIAPHelper.h"
+#import "SVProgressHUD.h"
 
 @implementation AppDelegate
 
@@ -17,9 +18,49 @@
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
     [HuixiangIAPHelper sharedInstance];
+    [WXApi registerApp:@"wxf7421652d9938d6b"];
     return YES;
 }
-							
+
+-(BOOL)application:(UIApplication *) application handleOpenURL:(NSURL *)url
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+-(void) onReq:(BaseReq*)req
+{
+    
+}
+
+-(void) onResp:(BaseResp*)resp
+{
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+    {
+        NSString *title;
+        if(resp.errCode==WXSuccess){
+            title = @"发送成功";
+            [SVProgressHUD showSuccessWithStatus:title];
+            return;
+        }else if(resp.errCode==WXErrCodeAuthDeny){
+            title =@"授权失败";
+        }else if(resp.errCode==WXErrCodeSentFail){
+            title =@"发送失败";
+        }else if(resp.errCode==WXErrCodeUnsupport){
+            title =@"该版本微信不支持此操作";
+        }else if(resp.errCode==WXErrCodeUserCancel){
+            title =@"分享被取消";
+        }else{
+            title =@"未知错误";
+        }
+        [SVProgressHUD showErrorWithStatus:title];
+    }
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

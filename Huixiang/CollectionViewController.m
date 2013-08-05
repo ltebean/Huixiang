@@ -15,6 +15,7 @@
 #import "LoadingMoreFooterView.h"
 #import "WeiboHTTP.h"
 #import "UIHelper.h"
+#import "WXApi.h"
 
 @interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,UIScrollViewDelegate,UIAlertViewDelegate,UIActionSheetDelegate>
 @property(nonatomic,strong) NSMutableArray* pieces;
@@ -187,7 +188,7 @@
                                                        delegate:self
                                               cancelButtonTitle:@"取消"
                                          destructiveButtonTitle:@"从收藏中删除"
-                                              otherButtonTitles:@"分享到微博",nil];
+                                              otherButtonTitles:@"分享到微博",@"分享给微信好友",@"分享到微信朋友圈",nil];
     
     sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [sheet showInView:[self.view window]];
@@ -199,6 +200,10 @@
         [self deletePiece];
     }else if(buttonIndex==1){
         [self shareToWeibo];
+    }else if(buttonIndex==2){
+        [self shareToWeixinIsTimeLine:NO];
+    }else if(buttonIndex==3){
+        [self shareToWeixinIsTimeLine:YES];
     }
 }
 
@@ -234,6 +239,22 @@
             [SVProgressHUD showSuccessWithStatus:@"成功"];
         }
     }];
+}
+
+-(void)shareToWeixinIsTimeLine: (BOOL)isTimeLine
+{
+    if(![WXApi isWXAppInstalled]){
+        [SVProgressHUD showErrorWithStatus:@"还没有安装微信"];
+        return;
+    }
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText=YES;
+    req.text = self.pieces[self.currentIndex][@"content"];
+    if(isTimeLine){
+        req.scene=WXSceneTimeline;
+    }
+    [WXApi sendReq:req];
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath  *)indexPath
