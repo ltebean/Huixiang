@@ -17,6 +17,8 @@
     // Override point for customization after application launch.
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab.png"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"empty.png"]];
+
     [HuixiangIAPHelper sharedInstance];
     [WXApi registerApp:@"wxf7421652d9938d6b"];
     return YES;

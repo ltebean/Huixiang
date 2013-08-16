@@ -18,7 +18,6 @@
 - (void) awakeFromNib
 {
     [super awakeFromNib];
-    
     self.label.layer.shadowColor = [UIColor grayColor].CGColor;
     self.label.layer.shadowOpacity = 0.5;
     self.label.layer.shadowRadius = 5.0;
@@ -42,6 +41,8 @@
 {
     _piece=piece;
     [self updateUI];
+    
+    
 }
 
 
@@ -51,6 +52,7 @@
     self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, size.width+50, size.height+30);
     self.label.text=self.piece[@"content"];
     self.label.textAlignment = UITextAlignmentLeft;
+    self.label.layer.shadowPath=[UIBezierPath bezierPathWithRect:self.label.bounds].CGPath;
 }
 
 

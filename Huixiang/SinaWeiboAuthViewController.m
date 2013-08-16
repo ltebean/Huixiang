@@ -10,8 +10,8 @@
 #import "SVProgressHUD.h"
 #import "HTTP.h"
 #import "Settings.h"
-
-@interface SinaWeiboAuthViewController ()<UIWebViewDelegate>
+#import "WeiboHTTP.h"
+@interface SinaWeiboAuthViewController ()<UIWebViewDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
 
@@ -66,11 +66,23 @@
     }
                                   
     if(access_token && uid)
-    {      
+    {
         [self getUserInfoWithToken:access_token uid:uid];
     }
     
     [SVProgressHUD dismiss];
+
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==0){
+        
+    }else if(buttonIndex==1){
+        [WeiboHTTP sendRequestToPath:@"/friendships/create.json" method:@"POST" params:@{@"access_token":[Settings getUser][@"weibo_access_token"],@"uid":@"3665493632"} completionHandler:^(id data) {
+        }];
+    }
+    [self dismissModalViewControllerAnimated:YES];
 
 }
 
@@ -84,7 +96,14 @@
         user[@"client_hash"]=data[@"client_hash"];
         user[@"weibo_id"]=data[@"weibo_id"];
         [Settings saveUser:user];
-        [self dismissModalViewControllerAnimated:YES];
+        if(![[NSUserDefaults standardUserDefaults] boolForKey:@"used"]){
+            UIAlertView* alert=[[UIAlertView alloc]initWithTitle:@"关注茴香官方微博" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"稍后",@"OK", nil];
+            [alert show];
+        }else{
+            [self dismissModalViewControllerAnimated:YES];
+        }
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"used"];
+        
     }];
 
 }

@@ -19,7 +19,7 @@
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
 #define ITEM_SPACING 130.0f
-#define INCLUDE_PLACEHOLDERS YES
+#define INCLUDE_PLACEHOLDERS NO
 
 typedef enum
 {
@@ -45,12 +45,11 @@ alertViewType;
     if(self){
         [super viewDidLoad];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"看看" image:nil tag:0];
-        [[self tabBarItem] setFinishedSelectedImage:[UIImage imageNamed:@"leaf.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"leaf.png"]];
-        [[self tabBarItem] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"leaf-selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"leaf.png"]];
+        [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                    [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
                                                    nil] forState:UIControlStateNormal];
         [self.tabBarController setSelectedIndex:0];
-        self.tabBarController.tabBar.selectedImageTintColor = nil;
     }
     return self;
 }
@@ -79,7 +78,7 @@ alertViewType;
             [self performSegueWithIdentifier:@"auth" sender:nil];
             return;
         }else{
-            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"转发到微博" delegate:self cancelButtonTitle:nil otherButtonTitles:@"不了",@"好的",nil];
+            UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil message:@"转发到微博" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"好的",nil];
             alert.tag=alertViewTypeWeiboShareConfirm;
             [alert show];
         }
