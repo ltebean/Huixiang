@@ -29,7 +29,7 @@
     self=[super initWithCoder:aDecoder];
     if(self){
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"settings-selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"settings.png"]];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"settings.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"settings.png"]];
         [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                    [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
                                                    nil] forState:UIControlStateNormal];

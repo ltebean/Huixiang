@@ -48,7 +48,7 @@
         
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = [UIFont systemFontOfSize:12.0f];
+		label.font = [UIFont systemFontOfSize:15.0f];
 		label.textColor = textColor;
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
@@ -58,7 +58,7 @@
         
 		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = [UIFont systemFontOfSize:13.0f];
+		label.font = [UIFont systemFontOfSize:15.0f];
 		label.textColor = textColor;
         label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;

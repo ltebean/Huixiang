@@ -41,7 +41,7 @@
     
     CGSize size=[UIHelper measureTextHeight:self.piece[@"content"] UIFont:self.label.font constrainedToSize:LABEL_SIZE];
     
-    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 296, size.height+36);
+    self.label.bounds=CGRectMake(self.label.bounds.origin.x,self.label.bounds.origin.y, 300, size.height+36);
     self.label.text=self.piece[@"content"];
     self.label.layer.shadowPath=[UIBezierPath bezierPathWithRect:self.label.bounds].CGPath;
 

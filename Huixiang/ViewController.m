@@ -45,7 +45,7 @@ alertViewType;
     if(self){
         [super viewDidLoad];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"看看" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"leaf-selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"leaf.png"]];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"leaf.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"leaf.png"]];
         [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                    [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
                                                    nil] forState:UIControlStateNormal];
@@ -67,7 +67,7 @@ alertViewType;
             [self addToFav];
         }
     }];
-    UIImageView *favIcon = [[UIImageView alloc] initWithFrame:CGRectMake(6, 7, 28, 28)];
+    UIImageView *favIcon = [[UIImageView alloc] initWithFrame:CGRectMake(7, 7, 27, 27)];
     [favIcon setImage:[UIImage imageNamed:@"fav"]];
     [favItem addSubview:favIcon];
     

@@ -44,7 +44,7 @@
         self.textLabel.textAlignment = UITextAlignmentCenter;
         self.textLabel.text =  @"上拉加载更多...";
         self.textLabel.textColor = TEXT_COLOR;
-        self.textLabel.font=[UIFont systemFontOfSize:14];
+        self.textLabel.font=[UIFont systemFontOfSize:15];
         [self addSubview:self.textLabel];
         
         self.textLabel.backgroundColor = [UIColor clearColor];

@@ -37,7 +37,7 @@
     self=[super initWithCoder:aDecoder];
     if(self){
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"收藏" image:nil tag:0];
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"love-selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"love.png"]];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"love.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"love.png"]];
         [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                    [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
                                                    nil] forState:UIControlStateNormal];
