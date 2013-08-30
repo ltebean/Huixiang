@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA231B3817D064F700B9C5C8 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA231B3717D064F700B9C5C8 /* UIView+Genie.m */; };
+		FA231B3917D06AA400B9C5C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0E517698F92007BC364 /* ViewController.m */; };
 		FA25E609178A831B00423752 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25E607178A831B00423752 /* leaf.png */; };
 		FA25E60A178A831B00423752 /* leaf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25E608178A831B00423752 /* leaf@2x.png */; };
 		FA25E60C178A854700423752 /* quill.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25E60B178A854700423752 /* quill.png */; };
@@ -70,12 +72,13 @@
 		FAE9B0D617698F92007BC364 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0D517698F92007BC364 /* main.m */; };
 		FAE9B0DA17698F92007BC364 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0D917698F92007BC364 /* AppDelegate.m */; };
 		FAE9B0E317698F92007BC364 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE9B0E117698F92007BC364 /* MainStoryboard.storyboard */; };
-		FAE9B0E617698F92007BC364 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0E517698F92007BC364 /* ViewController.m */; };
 		FAE9B0EE17698FF4007BC364 /* HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0ED17698FF4007BC364 /* HTTP.m */; };
 		FAEC39B0178570D50089E61E /* InsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC39AF178570D50089E61E /* InsetsLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA231B3617D064F700B9C5C8 /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
+		FA231B3717D064F700B9C5C8 /* UIView+Genie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Genie.m"; sourceTree = "<group>"; };
 		FA25E607178A831B00423752 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf.png; sourceTree = "<group>"; };
 		FA25E608178A831B00423752 /* leaf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaf@2x.png"; sourceTree = "<group>"; };
 		FA25E60B178A854700423752 /* quill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quill.png; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 		FA29CACE1786A63D00452B91 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				FA231B3617D064F700B9C5C8 /* UIView+Genie.h */,
+				FA231B3717D064F700B9C5C8 /* UIView+Genie.m */,
 				FAEC39AE178570D50089E61E /* InsetsLabel.h */,
 				FAEC39AF178570D50089E61E /* InsetsLabel.m */,
 				FA29CACF1786A66900452B91 /* UIHelper.h */,
@@ -510,9 +515,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA231B3917D06AA400B9C5C8 /* ViewController.m in Sources */,
 				FAE9B0D617698F92007BC364 /* main.m in Sources */,
 				FAE9B0DA17698F92007BC364 /* AppDelegate.m in Sources */,
-				FAE9B0E617698F92007BC364 /* ViewController.m in Sources */,
 				FAE9B0EE17698FF4007BC364 /* HTTP.m in Sources */,
 				FA5133511782B1B00072FC1A /* iCarousel.m in Sources */,
 				FA5133581782B3930072FC1A /* PieceView.m in Sources */,
@@ -530,6 +535,7 @@
 				FA2AA8D7178540F8000D63FC /* HuixiangIAPHelper.m in Sources */,
 				FAEC39B0178570D50089E61E /* InsetsLabel.m in Sources */,
 				FA29CAD11786A66900452B91 /* UIHelper.m in Sources */,
+				FA231B3817D064F700B9C5C8 /* UIView+Genie.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

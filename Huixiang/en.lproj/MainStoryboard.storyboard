@@ -412,7 +412,6 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="share:"/>
                 <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
             </relationships>
         </class>

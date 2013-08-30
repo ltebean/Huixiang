@@ -16,6 +16,7 @@
 #import "WeiboHTTP.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WXApi.h"
+#import "UIView+Genie.h"
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
 #define ITEM_SPACING 130.0f
@@ -196,11 +197,28 @@ alertViewType;
         return;
     }
     
-    [SVProgressHUD showWithStatus:@"收藏"];
     NSDictionary* piece=self.pieces[self.carousel.currentItemIndex];
+    //animation
+    NSData *tempArchive = [NSKeyedArchiver archivedDataWithRootObject:self.carousel];
+    UIView *tempView=[NSKeyedUnarchiver unarchiveObjectWithData:tempArchive];
+    for(UIView* view in tempView.subviews){
+        if([view isKindOfClass:[HMSideMenu class]]){
+            [view removeFromSuperview];
+            break;
+        }
+    }
+    [self.view addSubview:tempView];
+    CGRect endRect = CGRectMake(150, self.view.frame.size.height, 20, 20);
+    [tempView genieInTransitionWithDuration:0.7
+                            destinationRect:endRect
+                            destinationEdge:BCRectEdgeTop
+                                 completion:^{
+                                     [tempView removeFromSuperview];                                     
+                                 }];
+    
     [HTTP sendRequestToPath:@"/fav" method:@"POST" params:@{@"pieceid":piece[@"id"]} cookies:@{@"cu":user[@"client_hash"]} completionHandler:^(id data) {
         if(data){
-            [SVProgressHUD showSuccessWithStatus:@"成功"];
+            [SVProgressHUD showSuccessWithStatus:@"已收藏"];
         }else{
             [SVProgressHUD showErrorWithStatus:@"失败"];
         }
