@@ -51,6 +51,7 @@ alertViewType;
                                                    [UIColor colorWithRed:150.0f/255.0f green:150.0f/255.0f blue:150.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
                                                    nil] forState:UIControlStateNormal];
         [self.tabBarController setSelectedIndex:0];
+
     }
     return self;
 }
@@ -108,7 +109,7 @@ alertViewType;
     self.sideMenu = [[HMSideMenu alloc] initWithItems:@[favItem,weiboItem,weixinItem]];
     self.sideMenu.menuPosition=HMSideMenuPositionTop;
     [self.sideMenu setItemSpacing:20.0f];
-    [self.carousel addSubview:self.sideMenu];
+    [self.view addSubview:self.sideMenu];
 
 }
 
@@ -124,7 +125,11 @@ alertViewType;
     self.count=0;
     self.loaded=NO;
 	// Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.navigationBar.translucent = NO;
+    self.tabBarController.tabBar.translucent=NO;
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar-bg@2x.png"] forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
     
+
   
 }
 
@@ -235,7 +240,7 @@ alertViewType;
     NSDictionary* piece=self.pieces[self.carousel.currentItemIndex];
 
     [SVProgressHUD showWithStatus:@"分享"];
-    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香#",piece[@"content"]];
+    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香# http://huixiang.im/piece/%@",piece[@"content"],piece[@"id"]];
 
     [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
         if(!data){
@@ -282,9 +287,12 @@ alertViewType;
         [SVProgressHUD showErrorWithStatus:@"还没有安装微信"];
         return;
     }
+    
+    NSDictionary *piece=self.pieces[self.carousel.currentItemIndex];
+    NSString* content=[NSString stringWithFormat:@"「%@」-摘自茴香 http://huixiang.im/piece/%@",piece[@"content"],piece[@"id"]];    
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
     req.bText=YES;
-    req.text = self.pieces[self.carousel.currentItemIndex][@"content"];
+    req.text = content;
     if(isTimeLine){
         req.scene=WXSceneTimeline;
     }

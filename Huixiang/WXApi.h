@@ -1,5 +1,5 @@
 //
-//  MMApi.h
+//  WXApi.h
 //  ApiClient
 //
 //  Created by Tencent on 12-2-28.
@@ -10,17 +10,17 @@
 
 #import "WXApiObject.h"
 
-#pragma mark - 
-/*! @brief 接收并处理来至微信终端程序的事件消息
+#pragma mark -
+/*! @brief 接收并处理来自微信终端程序的事件消息
  *
- * 接收并处理来至微信终端程序的事件消息，期间微信界面会切换到第三方应用程序。
- * WXApiDelegate 会在handleOpenURL中使用并触发。
+ * 接收并处理来自微信终端程序的事件消息，期间微信界面会切换到第三方应用程序。
+ * WXApiDelegate 会在handleOpenURL:delegate:中使用并触发。
  */
 @protocol WXApiDelegate <NSObject>
 
 @optional
 
-/*! @brief 收到一个来自微信的请求，处理完后调用sendResp
+/*! @brief 收到一个来自微信的请求，第三方应用程序处理完后调用sendResp向微信发送结果
  *
  * 收到一个来自微信的请求，异步处理完成后必须调用sendResp发送处理结果给微信。
  * 可能收到的请求有GetMessageFromWXReq、ShowMessageFromWXReq等。
@@ -40,24 +40,36 @@
 
 #pragma mark -
 
-/*! @brief 微信Api接口函数
+/*! @brief 微信Api接口函数类
  *
  * 该类封装了微信终端SDK的所有接口
  */
 @interface WXApi : NSObject
 
-/*! @brief WXApi的成员函数，在微信终端程序中注册第三方应用。
+/*! @brief WXApi的成员函数，向微信终端程序注册第三方应用。
  *
  * 需要在每次启动第三方应用程序时调用。第一次调用后，会在微信的可用应用列表中出现。
+ * iOS7及以上系统需要调起一次微信才会出现在微信的可用应用列表中。
+ * @attention 请保证在主线程中调用此函数
  * @param appid 微信开发者ID
  * @return 成功返回YES，失败返回NO。
  */
-+(BOOL) registerApp:(NSString *) appid;
++(BOOL) registerApp:(NSString *)appid;
+
+/*! @brief WXApi的成员函数，向微信终端程序注册第三方应用。
+ *
+ * 需要在每次启动第三方应用程序时调用。第一次调用后，会在微信的可用应用列表中出现。
+ * @see registerApp
+ * @param appid 微信开发者ID
+ * @param appdesc 应用附加信息，长度不超过1024字节
+ * @return 成功返回YES，失败返回NO。
+ */
++(BOOL) registerApp:(NSString *)appid withDescription:(NSString *)appdesc;
 
 /*! @brief 处理微信通过URL启动App时传递的数据
  *
  * 需要在 application:openURL:sourceApplication:annotation:或者application:handleOpenURL中调用。
- * @param url 启动App的URL
+ * @param url 微信启动第三方应用时传递过来的URL
  * @param delegate  WXApiDelegate对象，用来接收微信触发的消息。
  * @return 成功返回YES，失败返回NO。
  */
@@ -75,11 +87,11 @@
  */
 +(BOOL) isWXAppSupportApi;
 
-/*! @brief 获取当前微信的版本所支持的API最高版本
+/*! @brief 获取微信的itunes安装地址
  *
- * @return 返回微信支持的最高API版本号。
+ * @return 微信的安装地址字符串。
  */
-+(NSString *) getWXAppSupportMaxApiVersion;
++(NSString *) getWXAppInstallUrl;
 
 /*! @brief 获取当前微信SDK的版本号
  *
@@ -87,22 +99,16 @@
  */
 +(NSString *) getApiVersion;
 
-/*! @brief 获取微信的itunes安装地址
- *
- * @return 微信的安装地址字符串。
- */
-+(NSString *) getWXAppInstallUrl;
-
 /*! @brief 打开微信
  *
  * @return 成功返回YES，失败返回NO。
  */
 +(BOOL) openWXApp;
 
-/*! @brief 发送请求到微信,等待微信返回onResp
+/*! @brief 发送请求到微信，等待微信返回onResp
  *
- * 函数调用后，会切换到微信的界面。第三方应用程序等待微信返回onResp。微信在异步处理完成后一定会调用onResp。可能发送的请求有
- * SendMessageToWXReq、SendAuthReq等。
+ * 函数调用后，会切换到微信的界面。第三方应用程序等待微信返回onResp。微信在异步处理完成后一定会调用onResp。支持以下类型
+ * SendAuthReq、SendMessageToWXReq等。
  * @param req 具体的发送请求，在调用函数后，请自己释放。
  * @return 成功返回YES，失败返回NO。
  */

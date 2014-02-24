@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - 「茴香」-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xpm-Jx-8Tk">
+                    <navigationItem key="navigationItem" title="「茴香」" id="Xpm-Jx-8Tk">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="mYu-Ai-qwb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8qC-fB-8oU">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>
@@ -42,7 +42,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="share:" destination="2" eventType="touchUpInside" id="e43-h0-t2c"/>
+                                    <action selector="share:" destination="2" eventType="touchUpInside" id="MXg-hM-LOo"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1701" y="-30"/>
+            <point key="canvasLocation" x="-1701" y="14"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="crY-hy-g4A">
@@ -74,9 +74,9 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INm-Rh-R6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2857" y="565"/>
+            <point key="canvasLocation" x="-2857" y="653"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Collection View Controller - 收藏-->
         <scene sceneID="4na-oQ-tva">
             <objects>
                 <viewController id="dkN-Yb-ciQ" customClass="CollectionViewController" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <gestureRecognizers/>
-                                                            <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="KannadaSangamMN" family="Kannada Sangam MN" pointSize="18"/>
                                                             <color key="textColor" red="0.2470588235" green="0.20392156859999999" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -126,7 +126,34 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Qfn-vk-W7n"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" id="IK3-CK-Bou">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Sil-m7-NTe">
+                                <rect key="frame" x="16" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="Button" image="quill.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="2" eventType="touchUpInside" id="CWj-SD-h7d"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="收藏" id="Qfn-vk-W7n">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="VXp-5k-zil">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="reloadData:" destination="dkN-Yb-ciQ" id="hun-44-zok"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="YQU-z3-XYa" id="WJw-14-Dzz"/>
@@ -135,9 +162,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDn-cQ-iSM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1701" y="565"/>
+            <point key="canvasLocation" x="-1701" y="601"/>
         </scene>
-        <!--Sina Weibo Auth View Controller-->
+        <!--Sina Weibo Auth View Controller - 授权-->
         <scene sceneID="7iU-vX-la4">
             <objects>
                 <viewController id="8r3-rh-CAN" customClass="SinaWeiboAuthViewController" sceneMemberID="viewController">
@@ -153,7 +180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1Rb-M6-OM3">
+                    <navigationItem key="navigationItem" title="授权" id="1Rb-M6-OM3">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="JD7-UU-U8T">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G8d-rm-gLW">
                                 <rect key="frame" x="16" y="9" width="28" height="26"/>
@@ -179,13 +206,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2R-vM-jbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-548" y="565"/>
+            <point key="canvasLocation" x="-544" y="601"/>
         </scene>
         <!--Settings View Controller - 设置-->
         <scene sceneID="I04-pv-zlY">
             <objects>
                 <tableViewController id="GuY-TO-zhn" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="42" sectionHeaderHeight="10" sectionFooterHeight="10" id="3C2-Z7-Lel">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" dataMode="static" style="grouped" separatorStyle="default" rowHeight="42" sectionHeaderHeight="10" sectionFooterHeight="10" id="3C2-Z7-Lel">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81176470590000005" green="0.76862745099999996" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -345,7 +372,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKl-y7-wc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1701" y="1148"/>
+            <point key="canvasLocation" x="-1701" y="1296"/>
         </scene>
         <!--Navigation Controller - 每日-->
         <scene sceneID="d2T-ST-LEl">
@@ -364,7 +391,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1C-Ie-OZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2227" y="-30"/>
+            <point key="canvasLocation" x="-2227" y="14"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="GoN-qU-kJv">
@@ -383,7 +410,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gu6-nK-Af1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1074" y="565"/>
+            <point key="canvasLocation" x="-1074" y="645"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="1HQ-83-W5B">
@@ -402,7 +429,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rM-wO-uzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2227" y="1148"/>
+            <point key="canvasLocation" x="-2227" y="1296"/>
         </scene>
         <!--Navigation Controller - 收藏-->
         <scene sceneID="bWb-pn-5ok">
@@ -422,7 +449,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eog-xY-IDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2227" y="565"/>
+            <point key="canvasLocation" x="-2227" y="653"/>
         </scene>
     </scenes>
     <resources>

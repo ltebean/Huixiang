@@ -54,21 +54,13 @@
 	// Do any additional setup after loading the view.
     self.page=1;
     self.reloading=NO;
-//    if (_refreshHeaderView == nil) {
-//		
-//		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
-//		view.delegate = self;
-//		[self.tableView addSubview:view];
-//		_refreshHeaderView = view;
-//	}
-	
-	//  update the last update date
-	[_refreshHeaderView refreshLastUpdatedDate];
     
     self.loadFooterView = [[LoadingMoreFooterView alloc]initWithFrame:CGRectMake(0, 0, 320, 44.f)];
     self.loadingmore = NO;
     self.tableView.tableFooterView= self.loadFooterView;
     
+    self.navigationController.navigationBar.translucent = NO;
+    self.tabBarController.tabBar.translucent=NO;
 
 }
 
@@ -105,6 +97,9 @@
     [alert show];
 }
 
+
+
+
 -(void)refresh
 {
     NSDictionary* user=[Settings getUser];
@@ -125,12 +120,20 @@
             self.page++;
             [SVProgressHUD dismiss];
             [self.tableView reloadData];
+            NSIndexPath* top = [NSIndexPath indexPathForRow:NSNotFound inSection:0];
+            [self.tableView scrollToRowAtIndexPath:top atScrollPosition:UITableViewScrollPositionTop animated:YES];
         }else{
             [SVProgressHUD showErrorWithStatus:@"还没有收藏过任何句子"];
         }
    
     }];
 }
+
+
+- (IBAction)reloadData:(id)sender {
+    [self refresh];
+}
+
 
 -(void)loadMore
 {
@@ -228,8 +231,8 @@
         return;
     }
     [SVProgressHUD showWithStatus:@"分享"];
-    NSString* piece=self.pieces[self.currentIndex][@"content"];
-    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香#",piece];
+    NSDictionary* piece=self.pieces[self.currentIndex];
+    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香# http://huixiang.im/piece/%@",piece[@"content"],piece[@"id"]];
     [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
         if(!data){
             [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
@@ -249,9 +252,12 @@
         [SVProgressHUD showErrorWithStatus:@"还没有安装微信"];
         return;
     }
+    NSDictionary* piece=self.pieces[self.currentIndex];
+    NSString* content=[NSString stringWithFormat:@"「%@」-摘自茴香 http://huixiang.im/piece/%@",piece[@"content"],piece[@"id"]];
+
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
     req.bText=YES;
-    req.text = self.pieces[self.currentIndex][@"content"];
+    req.text = content;
     if(isTimeLine){
         req.scene=WXSceneTimeline;
     }
@@ -275,23 +281,6 @@
     }
 }
 
-
-#pragma mark -
-#pragma mark Data Source Loading / Reloading Methods
-
-- (void)reloadTableViewDataSource
-{
-	//  should be calling your tableviews data source model to reload
-	//  put here just for demo
-    _reloading=YES;
-    [self refresh];
-}
-
-- (void)didRefresh
-{
-    _reloading=NO;
-    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
-}
 
 
 #pragma mark -
@@ -323,33 +312,5 @@
 	
 }
 
-
-#pragma mark -
-#pragma mark EGORefreshTableHeaderDelegate Methods
-
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
-{
-	[self reloadTableViewDataSource];
-    self.reloading=YES;
-	[self performSelector:@selector(didRefresh) withObject:nil afterDelay:1.0];
-	
-}
-
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
-{
-	return self.reloading; // should return if data source model is reloadi
-}
-
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
-{
-	return [NSDate date]; // should return date data source was last change
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
