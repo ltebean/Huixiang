@@ -24,7 +24,7 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
-    [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setColor:[UIColor colorWithRed:60.0f/255.0f green:58.0f/255.0f blue:55.0f/255.0f alpha:1.0f]];
+
 
     self=[super initWithCoder:aDecoder];
     if(self){
