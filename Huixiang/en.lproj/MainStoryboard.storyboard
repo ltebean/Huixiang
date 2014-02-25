@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller - 「茴香」-->
+        <!--View Controller - 茴香-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="「茴香」" id="Xpm-Jx-8Tk">
+                    <navigationItem key="navigationItem" title="茴香" id="Xpm-Jx-8Tk">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="mYu-Ai-qwb">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8qC-fB-8oU">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>
@@ -345,7 +345,7 @@
                                                         <action selector="buy:" destination="GuY-TO-zhn" eventType="touchUpInside" id="4zb-9N-AoB"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="捐赠给我们" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nkE-GC-5Ki">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="支持我们" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nkE-GC-5Ki">
                                                     <rect key="frame" x="15" y="10" width="199" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -462,6 +462,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sLl-5O-1fY"/>
+        <segue reference="IUF-si-TA2"/>
     </inferredMetricsTieBreakers>
 </document>

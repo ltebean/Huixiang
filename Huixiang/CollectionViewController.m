@@ -109,7 +109,7 @@
     }
     self.page=1;
     [SVProgressHUD showWithStatus:@"加载中"];
-    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:nil cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:@{@"per":@20} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
         if(!data){
             [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
             return;
@@ -142,7 +142,7 @@
         [self showAuthConfirm];
         return;
     }
-    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:@{@"page":[NSString stringWithFormat:@"%d",self.page]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
+    [HTTP sendRequestToPath:@"/mine/favs" method:@"GET" params:@{@"per":@20, @"page":[NSString stringWithFormat:@"%d",self.page]} cookies:@{@"cu":user[@"client_hash"]}  completionHandler:^(NSArray* data) {
         if(!data){
             [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
             [self didLoadMore];

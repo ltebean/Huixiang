@@ -646,7 +646,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
@@ -657,7 +657,7 @@
 					"/Users/ltebean/Desktop/ios\\ workspace/Huixiang/Huixiang",
 				);
 				PRODUCT_NAME = "茴香";
-				PROVISIONING_PROFILE = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
 				WRAPPER_EXTENSION = app;
 			};
@@ -667,7 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cong Yu (6T4Q98EJT3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Huixiang/Huixiang-Prefix.pch";
 				INFOPLIST_FILE = "Huixiang/Huixiang-Info.plist";
@@ -678,7 +678,7 @@
 					"/Users/ltebean/Desktop/ios\\ workspace/Huixiang/Huixiang",
 				);
 				PRODUCT_NAME = "茴香";
-				PROVISIONING_PROFILE = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C6E64E8E-2AFA-4331-9F83-25C87D437120";
 				WRAPPER_EXTENSION = app;
 			};

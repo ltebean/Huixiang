@@ -127,7 +127,7 @@ alertViewType;
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationController.navigationBar.translucent = NO;
     self.tabBarController.tabBar.translucent=NO;
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar-bg@2x.png"] forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar-bg@2x.png"] forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
     
 
   
