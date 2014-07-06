@@ -135,7 +135,8 @@ alertViewType;
     self.seaport.deletage=self;
     self.bridge = [SeaportWebViewBridge bridgeForWebView:self.webView param:@{@"city":@"shanghai",@"name": @"ltebean"} dataHandler:^(id data) {
         NSLog(@"receive data: %@",data);
-        [self performSegueWithIdentifier:@"category" sender:data];
+        [self.sideMenu open];
+        //[self performSegueWithIdentifier:@"category" sender:data];
     }];
     self.webView.scrollView.showsVerticalScrollIndicator = NO;
 
