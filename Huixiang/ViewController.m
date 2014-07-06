@@ -17,6 +17,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WXApi.h"
 #import "UIView+Genie.h"
+#import "Seaport.h"
+#import "SeaportHttp.h"
+#import "SeaportWebViewBridge.h"
 
 #define NUMBER_OF_VISIBLE_ITEMS 1
 #define ITEM_SPACING 130.0f
@@ -31,7 +34,10 @@ typedef enum
 alertViewType;
 
 @interface ViewController ()<iCarouselDataSource, iCarouselDelegate,UIAlertViewDelegate,PieceViewDelegate,UIActionSheetDelegate>
-@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (nonatomic,strong) Seaport* seaport ;
+@property(strong,nonatomic) SeaportWebViewBridge *bridge;
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property(nonatomic,strong) NSMutableArray* pieces;
 @property (nonatomic, strong) HMSideMenu *sideMenu;
 @property int count;
@@ -118,51 +124,56 @@ alertViewType;
    
     [self initSideView];
 
-    self.carousel.dataSource=self;
-    self.carousel.delegate=self;
-    self.carousel.type = iCarouselTypeTimeMachine;
-    self.carousel.scrollEnabled=NO;
-    self.count=0;
+       self.count=0;
     self.loaded=NO;
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationController.navigationBar.translucent = NO;
     self.tabBarController.tabBar.translucent=NO;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar-bg@2x.png"] forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
     
+    self.seaport = [Seaport sharedInstance];
+    self.seaport.deletage=self;
+    self.bridge = [SeaportWebViewBridge bridgeForWebView:self.webView param:@{@"city":@"shanghai",@"name": @"ltebean"} dataHandler:^(id data) {
+        NSLog(@"receive data: %@",data);
+        [self performSegueWithIdentifier:@"category" sender:data];
+    }];
+    self.webView.scrollView.showsVerticalScrollIndicator = NO;
 
   
 }
 
 
--(void)viewDidAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
+
 {
-    [super viewDidAppear:YES];
-    if(!self.loaded){
-        [SVProgressHUD showWithStatus:@"加载中"];
-        [self refreshData];
-    }
+    [self refreshData];
 }
 
 
 -(void)refreshData
 {
-    [HTTP sendRequestToPath:@"/pieces" method:@"GET" params:nil cookies:nil completionHandler:^(id data) {
-        if(!data){
-            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
-            return;
-        }
-        self.pieces=data;
-        self.loaded=YES;
-        [SVProgressHUD dismiss];
-        [self.carousel reloadData];
-    }];
+//    NSString *rootPath = [self.seaport packagePath:@"all"];
+//    if(rootPath){
+//        NSString *filePath = [rootPath stringByAppendingPathComponent:@"index.html"];
+//        NSURL *localURL=[NSURL fileURLWithPath:filePath];
+//        
+//        NSURL *debugURL=[NSURL URLWithString:@"http://localhost:8080/index.html"];
+//        
+//        NSURLRequest *request=[NSURLRequest requestWithURL:debugURL];
+//        [self.webView loadRequest:request];
+//    }
+    
+    NSURL *debugURL=[NSURL URLWithString:@"http://localhost:8080/index.html"];
+    
+    NSURLRequest *request=[NSURLRequest requestWithURL:debugURL];
+    [self.webView loadRequest:request];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(alertView.tag==alertViewTypeWeiboShareConfirm){
         if(buttonIndex==1){
-            [self shareToWeibo];
+            //[self shareToWeibo];
         }
     }else if(alertView.tag==alertViewTypeAuthConfirm){
         if(buttonIndex==1){
@@ -202,24 +213,8 @@ alertViewType;
         return;
     }
     
-    NSDictionary* piece=self.pieces[self.carousel.currentItemIndex];
+    NSDictionary* piece=nil;
     //animation
-    NSData *tempArchive = [NSKeyedArchiver archivedDataWithRootObject:self.carousel];
-    UIView *tempView=[NSKeyedUnarchiver unarchiveObjectWithData:tempArchive];
-    for(UIView* view in tempView.subviews){
-        if([view isKindOfClass:[HMSideMenu class]]){
-            [view removeFromSuperview];
-            break;
-        }
-    }
-    [self.view addSubview:tempView];
-    CGRect endRect = CGRectMake(150, self.view.frame.size.height, 20, 20);
-    [tempView genieInTransitionWithDuration:0.7
-                            destinationRect:endRect
-                            destinationEdge:BCRectEdgeTop
-                                 completion:^{
-                                     [tempView removeFromSuperview];                                     
-                                 }];
     
     [HTTP sendRequestToPath:@"/fav" method:@"POST" params:@{@"pieceid":piece[@"id"]} cookies:@{@"cu":user[@"client_hash"]} completionHandler:^(id data) {
         if(data){
@@ -230,30 +225,30 @@ alertViewType;
     }];
 }
 
--(void)shareToWeibo
-{
-    NSDictionary* user=[Settings getUser];
-    if(!user){
-        [self performSegueWithIdentifier:@"auth" sender:nil];
-        return;
-    }
-    NSDictionary* piece=self.pieces[self.carousel.currentItemIndex];
-
-    [SVProgressHUD showWithStatus:@"分享"];
-    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香# http://huixiang.im/piece/%@",piece[@"content"],piece[@"id"]];
-
-    [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
-        if(!data){
-            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
-            return;
-        }
-        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]||[data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21332]]){
-            [SVProgressHUD showErrorWithStatus:@"授权过期，请重新授权"];
-        }else{
-            [SVProgressHUD showSuccessWithStatus:@"成功"];
-        }
-    }];
-}
+//-(void)shareToWeibo
+//{
+//    NSDictionary* user=[Settings getUser];
+//    if(!user){
+//        [self performSegueWithIdentifier:@"auth" sender:nil];
+//        return;
+//    }
+//    NSDictionary* piece=self.pieces[self.carousel.currentItemIndex];
+//
+//    [SVProgressHUD showWithStatus:@"分享"];
+//    NSString* content=[NSString stringWithFormat:@"「%@」-摘自#茴香# http://huixiang.im/piece/%@",piece[@"content"],piece[@"id"]];
+//
+//    [WeiboHTTP sendRequestToPath:@"/statuses/update.json" method:@"POST" params:@{@"access_token":user[@"weibo_access_token"],@"status":content} completionHandler:^(id data) {
+//        if(!data){
+//            [SVProgressHUD showErrorWithStatus:@"网络连接出错啦"];
+//            return;
+//        }
+//        if([data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21327]]||[data[@"error_code"] isEqualToNumber:[NSNumber numberWithInt:21332]]){
+//            [SVProgressHUD showErrorWithStatus:@"授权过期，请重新授权"];
+//        }else{
+//            [SVProgressHUD showSuccessWithStatus:@"成功"];
+//        }
+//    }];
+//}
 
 - (IBAction)share:(id)sender {
     if(![Settings getUser]){
@@ -288,7 +283,7 @@ alertViewType;
         return;
     }
     
-    NSDictionary *piece=self.pieces[self.carousel.currentItemIndex];
+    NSDictionary *piece=nil;
     NSString* content=[NSString stringWithFormat:@"「%@」-摘自茴香 http://huixiang.im/piece/%@",piece[@"content"],piece[@"id"]];    
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
     req.bText=YES;
@@ -297,99 +292,6 @@ alertViewType;
         req.scene=WXSceneTimeline;
     }
     [WXApi sendReq:req];
-}
-
-
-#pragma mark -
-#pragma mark iCarousel methods
-
-- (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
-{
-    return self.pieces.count;
-}
-
-- (NSUInteger)numberOfVisibleItemsInCarousel:(iCarousel *)carousel
-{
-    //limit the number of items views loaded concurrently (for performance reasons)
-    //this also affects the appearance of circular-type carousels
-    return NUMBER_OF_VISIBLE_ITEMS;
-}
-
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
-{
-	//create new view if no view is available for recycling
-	if (view == nil)
-	{
-        NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"PieceView"
-                                                          owner:self
-                                                        options:nil];
-        view=[nibViews lastObject];        
-    }
-    
-    ((PieceView*)view).piece=self.pieces[index];
-    ((PieceView*)view).delegate=self;
-
-  	return view;
-    
-}
-
--(void)didSwipe
-{
-    if(self.sideMenu.isOpen){
-        [self.sideMenu close];
-    }
-    self.count++;
-    if(self.count==self.pieces.count){
-        self.count=0;
-        [self refreshData];
-    }
-    [self.carousel scrollByNumberOfItems:-1 duration:0.5];
-    
-}
-
-- (void)carouselWillBeginDragging:(iCarousel *)carousel;
-{
-    
-}
-
--(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
-{
-    if (!self.sideMenu.isOpen){
-        [self.sideMenu open];
-    }else{
-        [self.sideMenu close];
-    }
-}
-
-- (CGFloat)carouselItemWidth:(iCarousel *)carousel
-{
-    //usually this should be slightly wider than the item views
-    return ITEM_SPACING;
-}
-
-- (CGFloat)carousel:(iCarousel *)carousel itemAlphaForOffset:(CGFloat)offset
-{
-	//set opacity based on distance from camera
-    return 1.0f - fminf(fmaxf(offset, 0.0f), 1.0f);
-}
-
-- (CATransform3D)carousel:(iCarousel *)_carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform
-{
-    //implement 'flip3D' style carousel
-    transform = CATransform3DRotate(transform, M_PI / 8.0f, 0.0f, 1.0f, 0.0f);
-    return CATransform3DTranslate(transform, 0.0f, 0.0f, offset * self.carousel.itemWidth);
-}
-
-
-- (BOOL)carouselShouldWrap:(iCarousel *)carousel
-{
-    return YES;
-}
-
-
-
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:YES];
 }
 
 

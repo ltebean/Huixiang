@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49233BE819691C47008E865C /* Seaport.m in Sources */ = {isa = PBXBuildFile; fileRef = 49233BD219691C47008E865C /* Seaport.m */; };
+		49233BE919691C47008E865C /* SeaportHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 49233BD419691C47008E865C /* SeaportHttp.m */; };
+		49233BEA19691C47008E865C /* SeaportWebViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 49233BD619691C47008E865C /* SeaportWebViewBridge.m */; };
+		49233BEB19691C47008E865C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 49233BDA19691C47008E865C /* ioapi.c */; };
+		49233BEC19691C47008E865C /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 49233BDC19691C47008E865C /* mztools.c */; };
+		49233BED19691C47008E865C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 49233BDE19691C47008E865C /* unzip.c */; };
+		49233BEE19691C47008E865C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 49233BE019691C47008E865C /* zip.c */; };
+		49233BEF19691C47008E865C /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 49233BE319691C47008E865C /* SSZipArchive.m */; };
+		49233BF019691C47008E865C /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49233BE619691C47008E865C /* WebViewJavascriptBridge.js.txt */; };
+		49233BF119691C47008E865C /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 49233BE719691C47008E865C /* WebViewJavascriptBridge.m */; };
+		49233BF319691C56008E865C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49233BF219691C56008E865C /* libz.dylib */; };
+		49233BF419691CFB008E865C /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B703118BAEBD9006D27E9 /* libWeChatSDK.a */; };
 		FA231B3817D064F700B9C5C8 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA231B3717D064F700B9C5C8 /* UIView+Genie.m */; };
 		FA231B3917D06AA400B9C5C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE9B0E517698F92007BC364 /* ViewController.m */; };
 		FA25E609178A831B00423752 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = FA25E607178A831B00423752 /* leaf.png */; };
@@ -30,7 +42,6 @@
 		FA5133531782B2150072FC1A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5133521782B2150072FC1A /* QuartzCore.framework */; };
 		FA5133551782B3650072FC1A /* PieceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5133541782B3650072FC1A /* PieceView.xib */; };
 		FA5133581782B3930072FC1A /* PieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5133571782B3930072FC1A /* PieceView.m */; };
-		FA5B703418BAEBD9006D27E9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B703118BAEBD9006D27E9 /* libWeChatSDK.a */; };
 		FA5B703718BB13B5006D27E9 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B703518BB13B5006D27E9 /* refresh.png */; };
 		FA5B703818BB13B5006D27E9 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B703618BB13B5006D27E9 /* refresh@2x.png */; };
 		FA5B703C18BB17AD006D27E9 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B703B18BB17AD006D27E9 /* icon-120.png */; };
@@ -82,6 +93,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49233BD119691C47008E865C /* Seaport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seaport.h; sourceTree = "<group>"; };
+		49233BD219691C47008E865C /* Seaport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seaport.m; sourceTree = "<group>"; };
+		49233BD319691C47008E865C /* SeaportHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeaportHttp.h; sourceTree = "<group>"; };
+		49233BD419691C47008E865C /* SeaportHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeaportHttp.m; sourceTree = "<group>"; };
+		49233BD519691C47008E865C /* SeaportWebViewBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeaportWebViewBridge.h; sourceTree = "<group>"; };
+		49233BD619691C47008E865C /* SeaportWebViewBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeaportWebViewBridge.m; sourceTree = "<group>"; };
+		49233BD919691C47008E865C /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		49233BDA19691C47008E865C /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		49233BDB19691C47008E865C /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		49233BDC19691C47008E865C /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		49233BDD19691C47008E865C /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		49233BDE19691C47008E865C /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		49233BDF19691C47008E865C /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		49233BE019691C47008E865C /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		49233BE119691C47008E865C /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		49233BE219691C47008E865C /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		49233BE319691C47008E865C /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		49233BE519691C47008E865C /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		49233BE619691C47008E865C /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		49233BE719691C47008E865C /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		49233BF219691C56008E865C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FA231B3617D064F700B9C5C8 /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
 		FA231B3717D064F700B9C5C8 /* UIView+Genie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Genie.m"; sourceTree = "<group>"; };
 		FA25E607178A831B00423752 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf.png; sourceTree = "<group>"; };
@@ -186,9 +218,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5B703418BAEBD9006D27E9 /* libWeChatSDK.a in Frameworks */,
+				49233BF319691C56008E865C /* libz.dylib in Frameworks */,
 				FA2AA8D017854040000D63FC /* StoreKit.framework in Frameworks */,
 				FA7F42A61783CB6A00AD26CB /* MessageUI.framework in Frameworks */,
+				49233BF419691CFB008E865C /* libWeChatSDK.a in Frameworks */,
 				FA5133531782B2150072FC1A /* QuartzCore.framework in Frameworks */,
 				FAE9B0CA17698F92007BC364 /* UIKit.framework in Frameworks */,
 				FAE9B0CC17698F92007BC364 /* Foundation.framework in Frameworks */,
@@ -199,6 +232,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49233BD019691C37008E865C /* seaport */ = {
+			isa = PBXGroup;
+			children = (
+				49233BD119691C47008E865C /* Seaport.h */,
+				49233BD219691C47008E865C /* Seaport.m */,
+				49233BD319691C47008E865C /* SeaportHttp.h */,
+				49233BD419691C47008E865C /* SeaportHttp.m */,
+				49233BD519691C47008E865C /* SeaportWebViewBridge.h */,
+				49233BD619691C47008E865C /* SeaportWebViewBridge.m */,
+				49233BD719691C47008E865C /* SSZipArchive */,
+				49233BE419691C47008E865C /* WebViewJavascriptBridge */,
+			);
+			name = seaport;
+			sourceTree = "<group>";
+		};
+		49233BD719691C47008E865C /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				49233BD819691C47008E865C /* minizip */,
+				49233BE219691C47008E865C /* SSZipArchive.h */,
+				49233BE319691C47008E865C /* SSZipArchive.m */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		49233BD819691C47008E865C /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				49233BD919691C47008E865C /* crypt.h */,
+				49233BDA19691C47008E865C /* ioapi.c */,
+				49233BDB19691C47008E865C /* ioapi.h */,
+				49233BDC19691C47008E865C /* mztools.c */,
+				49233BDD19691C47008E865C /* mztools.h */,
+				49233BDE19691C47008E865C /* unzip.c */,
+				49233BDF19691C47008E865C /* unzip.h */,
+				49233BE019691C47008E865C /* zip.c */,
+				49233BE119691C47008E865C /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		49233BE419691C47008E865C /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				49233BE519691C47008E865C /* WebViewJavascriptBridge.h */,
+				49233BE619691C47008E865C /* WebViewJavascriptBridge.js.txt */,
+				49233BE719691C47008E865C /* WebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
 		FA25E611178A9B4700423752 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +456,7 @@
 		FAE9B0C817698F92007BC364 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49233BF219691C56008E865C /* libz.dylib */,
 				FAE9B0C917698F92007BC364 /* UIKit.framework */,
 				FAE9B0CB17698F92007BC364 /* Foundation.framework */,
 				FAE9B0CD17698F92007BC364 /* CoreGraphics.framework */,
@@ -382,6 +467,7 @@
 		FAE9B0CF17698F92007BC364 /* Huixiang */ = {
 			isa = PBXGroup;
 			children = (
+				49233BD019691C37008E865C /* seaport */,
 				FA908AED17AF357C00BF4135 /* weixin */,
 				FA29CACE1786A63D00452B91 /* ui */,
 				FA2AA8D117854056000D63FC /* iap */,
@@ -491,6 +577,7 @@
 				FA5133551782B3650072FC1A /* PieceView.xib in Resources */,
 				FA7F42811783BAB100AD26CB /* favorites.png in Resources */,
 				FA7F42821783BAB100AD26CB /* favorites@2x.png in Resources */,
+				49233BF019691C47008E865C /* WebViewJavascriptBridge.js.txt in Resources */,
 				FA7F42851783BAC200AD26CB /* heartAction.png in Resources */,
 				FA7F42861783BAC200AD26CB /* heartAction@2x.png in Resources */,
 				FA7F42891783BAD100AD26CB /* settings.png in Resources */,
@@ -540,27 +627,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49233BE819691C47008E865C /* Seaport.m in Sources */,
 				FA231B3917D06AA400B9C5C8 /* ViewController.m in Sources */,
 				FAE9B0D617698F92007BC364 /* main.m in Sources */,
 				FAE9B0DA17698F92007BC364 /* AppDelegate.m in Sources */,
 				FAE9B0EE17698FF4007BC364 /* HTTP.m in Sources */,
+				49233BEF19691C47008E865C /* SSZipArchive.m in Sources */,
+				49233BEA19691C47008E865C /* SeaportWebViewBridge.m in Sources */,
 				FA5133511782B1B00072FC1A /* iCarousel.m in Sources */,
+				49233BE919691C47008E865C /* SeaportHttp.m in Sources */,
 				FA5133581782B3930072FC1A /* PieceView.m in Sources */,
 				FA7F42921783BC6D00AD26CB /* SinaWeiboAuthViewController.m in Sources */,
 				FA7F42981783BC7F00AD26CB /* SVProgressHUD.m in Sources */,
 				FA7F42A11783C99900AD26CB /* CollectionViewController.m in Sources */,
+				49233BEC19691C47008E865C /* mztools.c in Sources */,
 				FA7F42AA1783DBA700AD26CB /* HMSideMenu.m in Sources */,
 				FA7F42CF1783EABF00AD26CB /* PieceCell.m in Sources */,
 				FA7F42D81783EDFE00AD26CB /* EGORefreshTableHeaderView.m in Sources */,
 				FA7F42DB1783EDFE00AD26CB /* LoadingMoreFooterView.m in Sources */,
 				FA7F42E1178406A100AD26CB /* Settings.m in Sources */,
+				49233BF119691C47008E865C /* WebViewJavascriptBridge.m in Sources */,
+				49233BED19691C47008E865C /* unzip.c in Sources */,
 				FA7F42E417840E0100AD26CB /* SettingsViewController.m in Sources */,
 				FA7F42F3178414D500AD26CB /* WeiboHTTP.m in Sources */,
 				FA2AA8D417854075000D63FC /* IAPHelper.m in Sources */,
 				FA2AA8D7178540F8000D63FC /* HuixiangIAPHelper.m in Sources */,
 				FAEC39B0178570D50089E61E /* InsetsLabel.m in Sources */,
 				FA29CAD11786A66900452B91 /* UIHelper.m in Sources */,
+				49233BEE19691C47008E865C /* zip.c in Sources */,
 				FA231B3817D064F700B9C5C8 /* UIView+Genie.m in Sources */,
+				49233BEB19691C47008E865C /* ioapi.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +750,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Huixiang\\\"",
-					"/Users/ltebean/Desktop/ios\\ workspace/Huixiang/Huixiang",
+					/Users/ltebean/Desktop/ios,
+					workspace/Huixiang/Huixiang,
+					"$(PROJECT_DIR)/Huixiang",
 				);
 				PRODUCT_NAME = "茴香";
 				PROVISIONING_PROFILE = "";
@@ -675,7 +773,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Huixiang\\\"",
-					"/Users/ltebean/Desktop/ios\\ workspace/Huixiang/Huixiang",
+					/Users/ltebean/Desktop/ios,
+					workspace/Huixiang/Huixiang,
+					"$(PROJECT_DIR)/Huixiang",
 				);
 				PRODUCT_NAME = "茴香";
 				PROVISIONING_PROFILE = "";
